@@ -10,14 +10,16 @@
 
 
     function createkeys($number) {
-     $i = 0;
-     while ($i<$number) {
-         $key=generate_key();
-         addkey(get_db_connect(),$key);
-         echo "$key<br>";
-        $i++;
-     }
+        $i = 0;
+        $array='';
+         while ($i<$number) {
+             $key=generate_key();
+             addkey(get_db_connect(),$key);
+             $array  .= "$key<br>\n";
+             $i++;
 
+         }
+    return $array;
 }
 
 ?>
