@@ -1,6 +1,5 @@
 <?php
     include_once('generator.php');
-    include_once('connections.php');
     ?>
 <form action="" METHOD="post">
     <input type="text" name="pr_name" placeholder="Product">
