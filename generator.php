@@ -8,10 +8,7 @@
         return $new_key;
 }
 
-    function addtodb ($key){
 
-    return true;
-}
     function createkeys($number) {
      $i = 0;
      while ($i<$number) {
