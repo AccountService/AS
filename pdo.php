@@ -10,5 +10,5 @@
         $query->execute();
         echo 'asd';
     }
-addkey(get_db_connect(),'asd');
+
 ?>
