@@ -1,9 +1,13 @@
 <?php
+
+    //Connects to our MySQL database;
     function get_db_connect() {
         $config = parse_ini_file('config/db.ini');
         $db = new PDO("mysql:host={$config['host']};dbname={$config['db_name']};", $config['user'], $config['password']);
         return $db;
     }
+
+    // Add new key into MySQL database
     function addkey($db,$new_key){
         $query = $db->prepare("INSERT INTO generated_keys (gen_key) VALUES (:newkey)");
         $query->bindParam(':newkey',$new_key, PDO::PARAM_STR);
@@ -45,15 +49,15 @@
 
 
     // Function that compare key from html form with NySQL keys. $key --> string;
-    function keyValidation($key) {              
+    function keyValidation($key, $user_id) {              
         $allKeys = getKeys(get_db_connect());           // returns all keys. getConnect() func. that connect to MySQL database;
 
         if(in_array($key, $allKeys)) {
-            markKey($key, 1, get_db_connect());
-            echo "u're cool";
+            markKey($key, $user_id, get_db_connect());      
+
             return true;
         }
-        echo 'fail';
+
         return false;
     }
 
