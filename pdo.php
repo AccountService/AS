@@ -11,4 +11,15 @@
         echo 'asd';
     }
 
+    function validateKey($db, $key) {
+        $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE gen_key=:key");
+        $query->bindParam(':key',$key, PDO::PARAM_STR);
+        $query->execute();
+        $valid_key = false;
+        if(fetch(PDO::FETCH_ASSOC)!=false) {
+            return true;
+        } else return false;
+    }
+
+
 ?>
