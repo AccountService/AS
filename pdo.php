@@ -8,7 +8,6 @@
         $query = $db->prepare("INSERT INTO generated_keys (gen_key) VALUES (:newkey)");
         $query->bindParam(':newkey',$new_key, PDO::PARAM_STR);
         $query->execute();
-        echo 'asd';
     }
 
 ?>
