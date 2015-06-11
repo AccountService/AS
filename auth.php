@@ -14,6 +14,9 @@
 <?php
     if(isset($_POST['login']) && isset($_POST['pass'])) {
         if(isAuthorize(get_db_connect(),$_POST['login'], $_POST['pass'])) {
+            session_start();
+            $_SESSION['logged']=true;
+           //Тут в сесси нужно будет хранить id пользователя
             header('Location: /AccountService/AS/user.php');
         } else {echo "<center>Wrong login or password!</center>";}
     }
