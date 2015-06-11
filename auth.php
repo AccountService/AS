@@ -28,6 +28,6 @@
         } else {echo "<center>Wrong login or password!</center>";}
     }
     if(isset($_POST['signup'])) {
-        header('Location: /AccountService/AS/signup.php');
+        header('location:signup.php');
     }
 ?>
