@@ -1,6 +1,9 @@
 
 
 <?php
+
+    include('pdo.php');
+
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
     session_start();
@@ -17,6 +20,12 @@
                         <br>
                    </form>
             <?php endforeach; ?>
+
+        <?php foreach (getAllBuyedKeys($_SESSION['id'], get_db_connect()) as $key) : ?>
+        <ul>
+            <li><?= $key ?></li>
+        </ul>
+        <?php endforeach; ?>
 </div>
 
 <div>

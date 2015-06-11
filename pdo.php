@@ -86,6 +86,20 @@
         return false;
     }
 
+    function getAllBuyedKeys($user_ID, $db) {
+        $keys = array();
+        $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE user_ID = :user_ID");
+        $query->bindParam(':user_ID', $user_ID, PDO::PARAM_INT);
+
+        $query->execute();
+
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $keys[] = $row['gen_key'];
+        }
+
+        return $keys;
+    }
+
     function registration($db, $name, $email, $password) {
         $query = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, password(:password))");
         $query->bindParam(':name',$name, PDO::PARAM_STR);
