@@ -98,3 +98,4 @@ function getUserId($db, $login) {
     $id = $query->fetch(PDO::FETCH_ASSOC);
     return $id['user_id'];
 }
+
