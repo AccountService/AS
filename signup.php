@@ -7,6 +7,7 @@ include_once('pdo.php');
         $query->bindParam(':password',$password, PDO::PARAM_STR);
         $query->execute();
     }
+
 ?>
 <div style="margin-top: 15%; margin-left: 43%">
     <form method="post">
