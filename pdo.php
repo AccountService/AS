@@ -123,3 +123,18 @@
         return $id['user_id'];
     }
 
+    function getUserName($db, $id) {
+        $query = $db->prepare("SELECT name FROM users where user_id=:id");
+        $query->bindParam(':id',$id, PDO::PARAM_STR);
+        $query->execute();
+        $name = $query->fetch(PDO::FETCH_ASSOC);
+        return $name['name'];
+    }
+
+    function getUserEmail($db, $id) {
+        $query = $db->prepare("SELECT email FROM users where user_id=:id");
+        $query->bindParam(':id',$id, PDO::PARAM_STR);
+        $query->execute();
+        $email = $query->fetch(PDO::FETCH_ASSOC);
+        return $email['email'];
+    }
