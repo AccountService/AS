@@ -1,9 +1,11 @@
 
-
 <?php
+
+
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
     session_start();
+
     if(!isset($_SESSION['logged']))  {echo"<script>location.href = 'auth.php';</script>";}
 ?>
 
