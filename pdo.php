@@ -61,4 +61,40 @@
         return false;
     }
 
-   
+
+function registration($db, $name, $email, $password) {
+    $query = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, password(:password))");
+    $query->bindParam(':name',$name, PDO::PARAM_STR);
+    $query->bindParam(':email',$email, PDO::PARAM_STR);
+    $query->bindParam(':password',$password, PDO::PARAM_STR);
+    $query->execute();
+}
+
+function isUserExist($db, $email) {
+    $query = $db->prepare("SELECT email FROM users WHERE email=:email");
+    $query->bindParam(':email',$email, PDO::PARAM_STR);
+    $query->execute();
+    if($query->fetch(PDO::FETCH_ASSOC) == false) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function isAuthorize($db, $login, $password) {
+    $query = $db->prepare("SELECT * FROM users WHERE email=:email AND password=password(:password)");
+    $query->bindParam(':email',$login, PDO::PARAM_STR);
+    $query->bindParam(':password',$password, PDO::PARAM_STR);
+    $query->execute();
+    if($query->fetch(PDO::FETCH_ASSOC) != false) {
+        return true;
+    } else {return false;}
+}
+
+function getUserId($db, $login) {
+    $query = $db->prepare("SELECT user_id FROM users where email=:email");
+    $query->bindParam(':email',$login, PDO::PARAM_STR);
+    $query->execute();
+    $id = $query->fetch(PDO::FETCH_ASSOC);
+    return $id['user_id'];
+}

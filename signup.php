@@ -1,13 +1,5 @@
 <?php
 include_once('pdo.php');
-    function registration($db, $name, $email, $password) {
-        $query = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, password(:password))");
-        $query->bindParam(':name',$name, PDO::PARAM_STR);
-        $query->bindParam(':email',$email, PDO::PARAM_STR);
-        $query->bindParam(':password',$password, PDO::PARAM_STR);
-        $query->execute();
-    }
-
 ?>
 <div style="margin-top: 15%; margin-left: 43%">
     <form method="post">
@@ -25,8 +17,14 @@ include_once('pdo.php');
 
 <?php
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
-        if($_POST['pass'] == $_POST['pass_again']) {
-            registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
-            echo "<script>location.href = 'auth.php';</script>";
-        } else {echo "<center>Passwords do not match!</center>";}
+        if(isUserExist(get_db_connect(), $_POST['email'])) {
+            echo "<center>User is already exist!</center>";
+        } else {
+            if ($_POST['pass'] == $_POST['pass_again']) {
+                registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
+                echo "<script>location.href = 'auth.php';</script>";
+            } else {
+                echo "<center>Passwords do not match!</center>";
+            }
+        }
     }

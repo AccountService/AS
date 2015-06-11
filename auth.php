@@ -1,19 +1,9 @@
 <?php
     include_once('pdo.php');
-    function isAuthorize($db, $login, $password) {
-        $query = $db->prepare("SELECT * FROM users WHERE email=:email AND password=password(:password)");
-        $query->bindParam(':email',$login, PDO::PARAM_STR);
-        $query->bindParam(':password',$password, PDO::PARAM_STR);
-        $query->execute();
-        if($query->fetch(PDO::FETCH_ASSOC) != false) {
-            return true;
-        } else {return false;}
-    }
-
 ?>
 <div style="margin-top: 15%; margin-left: 43%">
     <form method="post">
-        Login:<br>
+        Email:<br>
         <input type="text" name="login"><br>
         Password:<br>
         <input type="password" name="pass"><br>
