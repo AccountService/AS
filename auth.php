@@ -1,7 +1,7 @@
 <?php
     include_once('pdo.php');
     function isAuthorize($db, $login, $password) {
-        $query = $db->prepare("SELECT * FROM users WHERE email=:email AND password=:password");
+        $query = $db->prepare("SELECT * FROM users WHERE email=:email AND password=password(:password)");
         $query->bindParam(':email',$login, PDO::PARAM_STR);
         $query->bindParam(':password',$password, PDO::PARAM_STR);
         $query->execute();
@@ -11,19 +11,23 @@
     }
 
 ?>
-<div style="margin-top: 35%; margin-left: 35%">
+<div style="margin-top: 15%; margin-left: 43%">
     <form method="post">
         Login:<br>
         <input type="text" name="login"><br>
         Password:<br>
-        <input type="text" name="pass"><br>
-        <input type="submit" value="Sign in" name="siginin">
-        <input type="submit" value="Sign up">
+        <input type="password" name="pass"><br>
+        <input type="submit" value="Sign in" name="signin">
+        <input type="submit" value="Sign up" name="signup">
     </form>
 </div>
 <?php
-    if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['signin'])) {
+    if(isset($_POST['login']) && isset($_POST['pass'])) {
         if(isAuthorize(get_db_connect(),$_POST['login'], $_POST['pass'])) {
-            header('Location: /user.php');
-        } else {echo "Wrong login or password!";}
+            header('Location: /AccountService/AS/user.php');
+        } else {echo "<center>Wrong login or password!</center>";}
     }
+    if(isset($_POST['signup'])) {
+        header('Location: /AccountService/AS/signup.php');
+    }
+?>

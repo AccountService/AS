@@ -1,12 +1,6 @@
 
 
 <?php
-
-if(isset($_POST['login'])&&isset($_POST['pass'])) {
-    if (isAuthorize(get_db_connect(),$_POST['login'],$_POST['pass'])) {}
-}
-?>
-
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
 ?>
