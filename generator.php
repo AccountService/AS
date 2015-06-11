@@ -17,7 +17,7 @@
          while ($i<$number) {
              $key=generate_key($id);
              addkey(get_db_connect(),$key);
-             $array  .= "$key<br>\n";
+             $array[] = $key;
              $i++;
 
          }
