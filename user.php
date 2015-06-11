@@ -29,6 +29,15 @@
 
 <div>
     <form action="" method="post">
-        <input type="text" name="key">
+        Validate your key:
+        <input type="text" name="key" placeholder="license key">
+        <input type="submit" name="key_subm">
+
     </form>
+    <?php
+        if(isset($_POST['key'])) {
+            keyValidation($_POST['key']);
+            connectKeyToUser($_POST['key'], $_SESSION['id']);
+        }
+    ?>
 </div>
