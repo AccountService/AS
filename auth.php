@@ -18,7 +18,7 @@
             $_SESSION['logged']=true;
             $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
            //Тут в сесси нужно будет хранить id пользователя
-            header('Location: /AccountService/AS/user.php');
+            header('Location:user.php');
         } else {echo "<center>Wrong login or password!</center>";}
     }
     if(isset($_POST['signup'])) {
