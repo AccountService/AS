@@ -1,3 +1,4 @@
 <?php
-    echo $_POST['keys'];
+file_put_contents('products.json', $_POST['a']);
+
 ?>
