@@ -27,6 +27,6 @@ include_once('pdo.php');
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
         if($_POST['pass'] == $_POST['pass_again']) {
             registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
-            echo "<center>Registration successful</center>>";
+            echo "<script>location.href = 'auth.php';</script>";
         } else {echo "<center>Passwords do not match!</center>";}
     }
