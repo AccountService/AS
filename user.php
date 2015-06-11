@@ -38,6 +38,8 @@
         if(isset($_POST['key'])) {
             keyValidation($_POST['key']);
             connectKeyToUser($_POST['key'], $_SESSION['id']);
+            header('Location: user.php');
+            exit();
         }
     ?>
 </div>
