@@ -95,9 +95,10 @@
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
             $keys_body[] = $row['gen_key'];
         }
-
-        foreach($keys_body as $key => $value) {
+        if(isset($keys_body)) {
+            foreach ($keys_body as $key => $value) {
                 $keys[getproductName($value[0])][] = $value;
+            }
         }
         return $keys;
     }

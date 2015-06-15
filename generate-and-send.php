@@ -19,8 +19,7 @@
             echo '<form action="test.php" method="post">';
             echo '<textarea cols="100" rows="20" name="keys">';
             echo "$prname:<br>\n";
-
-            var_dump($keyarray);
+            //var_dump($keyarray);
             echo '</textarea>';
             echo '<input type="submit">';
         }

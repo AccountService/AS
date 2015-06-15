@@ -1,33 +1,19 @@
 <?php
-/*
 
-
-$ch1 = curl_init("10.55.33.24/dev/addUser.php");
-curl_setopt($ch1, CURLOPT_POST, true);
-curl_setopt($ch1, CURLOPT_POSTFIELDS, $regInfo);
-curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-$response1 = curl_exec($ch1);
-var_dump($response1);
-curl_close($ch1);
-*/
 $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
 
 $regInfo = json_encode($regInfo);
-var_dump($regInfo);
+//var_dump($regInfo);
 
 
 function sendData($key_info ,$info, $address, $secret_key = null){
-
-
     $url = $address;
-
     $fields = array(
         $key_info => $info,
         'secret_key' => $secret_key
     );
 
     $fields_str = '';
-
     foreach($fields as $key=>$value) { $fields_str .= $key.'='.$value.'&'; }
     $fields_str = trim($fields_str, '&');
 
@@ -38,7 +24,6 @@ function sendData($key_info ,$info, $address, $secret_key = null){
     curl_close($ch);
 
     return $response;
-
 }
 
 echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = null));
@@ -52,7 +37,7 @@ echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = nu
             if ($_POST['pass'] == $_POST['pass_again']) {
                 registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
 
-             //   echo "<script>location.href = 'auth.php';</script>";
+                echo "<script>location.href = 'auth.php';</script>";
             } else {
                 echo "<center>Passwords do not match!</center>";
             }
