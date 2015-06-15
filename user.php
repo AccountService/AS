@@ -20,11 +20,28 @@
                    </form>
             <?php endforeach; ?>
 
+<<<<<<< HEAD
         <?php foreach (getAllBuyedKeys($_SESSION['id'], get_db_connect()) as $key) : ?>
         <ul>
             <li><?= $key ?></li> <input type = 'submit' value="cancel">
         </ul>
         <?php endforeach; ?>
+=======
+        <?php
+        $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
+       foreach ($keys as $key => $value) : ?>
+            <?=  $key.':'.'<br>' ;
+            echo "<ul>";
+                foreach($value as $key) {
+                    echo "<li>$key</li>";
+                }
+           echo "</ul>";
+           echo "<br>";
+           ?>
+        <?php endforeach;
+        //var_dump($keys);
+        ?>
+
 </div>
 
 <div>

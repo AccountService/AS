@@ -22,6 +22,6 @@
         } else {echo "<center>Wrong login or password!</center>";}
     }
     if(isset($_POST['signup'])) {
-        header('location:signup.php');
+        header('Location: signup.php');
     }
 ?>
