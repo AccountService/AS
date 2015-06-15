@@ -2,21 +2,21 @@
     include_once('generator.php');
     ?>
 <form action="" METHOD="post">
-    <input type="text" name="pr_name" placeholder="Product">
+    <input type="text" name="id" placeholder="Product">
     <input type="text" name="number" placeholder="number of keys">
     <input type='submit'>
 </form>
 
 <?php
 
-    if(isset($_POST['number']) && isset($_POST['pr_name'])) {
-        $prname=$_POST['pr_name'];
-        $keyarray=createkeys($_POST['number']);
+    if(isset($_POST['number']) && isset($_POST['id'])) {
+        $prname=$_POST['id'];
+        $keyarray=createkeys($_POST['number'],$prname);
         echo '<form action="test.php" method="post">';
-        echo'<textarea cols="100" rows="20" name="keys">';
+
         echo "$prname:<br>\n";
-        echo $keyarray;
-        echo '</textarea>';
+        var_dump($keyarray);
+
         echo '<input type="submit">';
 
     }

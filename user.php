@@ -22,7 +22,7 @@
 
         <?php foreach (getAllBuyedKeys($_SESSION['id'], get_db_connect()) as $key) : ?>
         <ul>
-            <li><?= $key ?></li>
+            <li><?= $key ?></li> <input type = 'submit' value="cancel">
         </ul>
         <?php endforeach; ?>
 </div>

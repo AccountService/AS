@@ -1,15 +1,5 @@
 <?php
-/*
 
-
-$ch1 = curl_init("10.55.33.24/dev/addUser.php");
-curl_setopt($ch1, CURLOPT_POST, true);
-curl_setopt($ch1, CURLOPT_POSTFIELDS, $regInfo);
-curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-$response1 = curl_exec($ch1);
-var_dump($response1);
-curl_close($ch1);
-*/
 $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
 
 $regInfo = json_encode($regInfo);
@@ -41,10 +31,9 @@ function sendData($key_info ,$info, $address, $secret_key = null){
 
 }
 
-echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = null));
 
 
-  /*  include_once('pdo.php');
+    include_once('pdo.php');
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
         if(isUserExist(get_db_connect(), $_POST['email'])) {
             echo "<center>User is already exist!</center>";
@@ -52,7 +41,8 @@ echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = nu
             if ($_POST['pass'] == $_POST['pass_again']) {
                 registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
 
-             //   echo "<script>location.href = 'auth.php';</script>";
+                sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = null);
+                echo "<script>location.href = 'auth.php';</script>";
             } else {
                 echo "<center>Passwords do not match!</center>";
             }
@@ -61,4 +51,3 @@ echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = nu
 
     echo '<center><a href="signup.php">return to register</a></center>>';
 
-*/
