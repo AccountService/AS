@@ -636,3 +636,6 @@ section {
 	.reg{
 	  margin-left: 75px;
 	}
+    .floating{
+        float:left!important;
+    }

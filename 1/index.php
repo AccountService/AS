@@ -147,7 +147,15 @@
     
     </div>
 		</center>
-  
+         <?php foreach ($json['products'] as $key => $value) : ?>
+         <form action="test.php" method="post">
+             <input type="hidden" name="id" value="<?=$value['id']?>">
+             <?=$value['name']?>
+             cost:    <?=$value['price']?>
+             <input type="submit" value="Buy">
+             <br>
+         </form>
+         <?php endforeach; ?>
 	 </div>
 	 
     
