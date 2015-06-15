@@ -44,7 +44,7 @@ function sendData($key_info ,$info, $address, $secret_key = null){
 echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = null));
 
 
-  /*  include_once('pdo.php');
+    include_once('pdo.php');
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
         if(isUserExist(get_db_connect(), $_POST['email'])) {
             echo "<center>User is already exist!</center>";
@@ -59,6 +59,5 @@ echo (sendData('regInfo',$regInfo,'10.55.33.24/dev/addUser.php',$secret_key = nu
         }
     }
 
-    echo '<center><a href="signup.php">return to register</a></center>>';
+    echo '<center><a href="signup.php">return to register</a></center>';
 
-*/

@@ -5,7 +5,7 @@
     function generate_key($id) {
         $randomv = rand().rand().rand();
 
-        $new_key = $id.hash('sha256', $randomv);
+        $new_key = $id.'_'.hash('sha256', $randomv);
         $new_key .= microtime(true);
         return $new_key;
 }
