@@ -90,13 +90,15 @@
         $keys = array();
         $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE user_ID = :user_ID");
         $query->bindParam(':user_ID', $user_ID, PDO::PARAM_INT);
-
         $query->execute();
 
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $keys[] = $row['gen_key'];
+            $keys_body[] = $row['gen_key'];
         }
 
+        foreach($keys_body as $key => $value) {
+                $keys[getproductName($value[0])][] = $value;
+        }
         return $keys;
     }
 
@@ -151,4 +153,30 @@
         $query->execute();
         $email = $query->fetch(PDO::FETCH_ASSOC);
         return $email['email'];
+    }
+
+    function getProductId($prodName) {
+        $file = file_get_contents("products.json");
+        $json = json_decode($file);
+        foreach($json->products as $key => $value) {
+            if($value->name == $prodName) {
+                $prod_id = $value->id;
+            }
+        }
+        if (isset($prod_id)) {
+            return $prod_id;
+        } else {return "Undefined product";}
+    }
+
+    function getproductName($prodId) {
+        $file = file_get_contents("products.json");
+        $json = json_decode($file);
+        foreach($json->products as $key => $value) {
+            if($value->id == $prodId) {
+                $prod_name = $value->name;
+            }
+        }
+        if (isset($prod_name)) {
+            return $prod_name;
+        } else {return "Undefined product";}
     }
