@@ -87,37 +87,37 @@ if(isset($_POST['name'])&&isset($_POST['email'])) {
 
 
             <div class="group-reg left-move">
-                <input type="text" name="name" required >
+                <input type="text" class="reg-input" name="name" required >
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>name:</label>
+                <label class="Absolute-Center">name:</label>
             </div>
 
             <div class="group-reg left-move">
-                <input type="text" name="email" required>
+                <input type="text" class="reg-input" name="email" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>e-mail:</label>
+                <label class="Absolute-Center">e-mail:</label>
             </div>
             <div class="group-reg left-move">
-                <input type="text" name="pass" required>
+                <input type="password" class="reg-input" name="pass" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>password:</label>
+                <label class="Absolute-Center">password:</label>
             </div>
 
             <div class="group-reg left-move">
-                <input type="text" name="pass_again" required>
+                <input type="password" class="reg-input" name="pass_again" required>
                 <span class="highlight"></span>
                 <span class="bar"></span>
-                <label>confirm password:</label>
+                <label class="Absolute-Center">confirm password:</label>
             </div>
             <div class="left-move button-move1">
-                <button class="btn waves-effect waves-light floating" type="submit" name="action">LOG IN</button>
+                <button class="btn waves-effect waves-light floating Absolute-Center" type="submit" name="action">SIGN UP</button>
             </div>
             <br><br>
 
-            <a style="margin-left:30px;" href="signup.php">sign-up</a>
+            <a style="margin-left:30px;" href="index.php">login</a>
 
 
         </form>
