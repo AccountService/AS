@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html >
   <head>
-
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8" />
       <link rel="stylesheet" href="css/style.css">
-
-
      <?php include('pdo.php');
       $jsondata = file_get_contents("products.json");
       $json = json_decode($jsondata, true);
@@ -13,11 +10,6 @@
     ?>
 
 
-
-
-    
-    
-    
   </head>
 
   <body>
@@ -33,9 +25,8 @@
   </section>
 
   <section class="menu menu--off">
-    <div><a href="#">Products</a></div>
-    <div><a href="#">My key</a></div>
-	<div><a href="#">Exit</a></div>
+    <div><a href="index.php">Products</a></div>
+    <div><a href="signup.php">Registration</a></div>
   </section>
   
 </section>
@@ -45,17 +36,17 @@
  <div class="container-form">
 
   
-  <form>
+  <form method="POST">
     
     <div class="group left-move">      
-      <input type="text" required>
+      <input type="text" name="login" required>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>e-mail:</label>
     </div>
 		
     <div class="group left-move">      
-      <input type="text" required>
+      <input type="password" name="pass" required>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>password:</label>
@@ -74,7 +65,22 @@
 </div>
 <br>
 	 <div class="container-main">
+         <?php
+         if(isset($_POST['login']) && isset($_POST['pass'])) {
+             if(isAuthorize(get_db_connect(),$_POST['login'], $_POST['pass'])) {
+                 session_start();
+                 $_SESSION['logged']=true;
+                 $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
+                 //Тут в сесси нужно будет хранить id пользователя
+                 header('Location:user.php');
+             } else {echo "<center><h3>Wrong email or password!</h3><br><br></center>";}
+         }
+         if(isset($_POST['signup'])) {
+             header('Location: signup.php');
+         }
+         ?>
 		<center>
+
 <?php $i = 0; ?>
             <?php foreach ($json['products'] as $key => $value) : ?>
                 <form action="test.php" method="get" class="form-selector">
@@ -103,37 +109,15 @@
                 if ($i%2==0) {echo '<br><br><br>';}
 
             endforeach; ?>
-
+        </center>
      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
         <script src="js/index.js"></script>
 
     <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
   <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
   <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
 
-
-
-
-  
-  
-  
   </body>
 </html>
+
