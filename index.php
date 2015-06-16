@@ -9,7 +9,7 @@
       session_start();
     ?>
 
-
+<?php if(isset($_GET['exit']) && $_GET['exit'] == 1) {$_SESSION['auth']=0;}?>
   </head>
 
   <body>
@@ -25,8 +25,12 @@
   </section>
 
   <section class="menu menu--off">
-    <div><a href="index.php">Products</a></div>
+    <div><a href="index.php"<?= $_SESSION['keys']=0?>>Products</a></div>
     <div><a href="signup.php">Registration</a></div>
+      <?php if($_SESSION['auth']==1) { ?>
+      <div><a href="index.php?exit=1">Exit</a></div>
+          <div><a href="index.php?keys=1">My keys</a></div>
+      <?php } ?>
   </section>
   
 </section>
@@ -35,32 +39,38 @@
 </div>
  <div class="container-form">
 
-  
-  <form method="POST">
-    
-    <div class="group left-move">      
-      <input type="text" name="login" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>e-mail:</label>
-    </div>
-		
-    <div class="group left-move">      
-      <input type="password" name="pass" required>
-      <span class="highlight"></span>
-      <span class="bar"></span>
-      <label>password:</label>
-    </div>
-     <div class="left-move button-move1">
-         <button class="btn waves-effect waves-light floating" type="submit" name="action">LOG IN</button>
-    </div>
-	<br><br>
+  <?php if(isset($_SESSION['auth']) && $_SESSION['auth']==1) {
+      $name = $_SESSION['name'];
+      echo "<h2>Hello, $name</h2>";
+  } else {?>
 
-           <a style="margin-left:30px;" href="signup.php">sign-up</a>
 
-	
-  </form>
- 
+      <form method="POST">
+
+          <div class="group left-move">
+              <input type="text" name="login" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>e-mail:</label>
+          </div>
+
+          <div class="group left-move">
+              <input type="password" name="pass" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>password:</label>
+          </div>
+          <div class="left-move button-move1">
+              <button class="btn waves-effect waves-light floating" type="submit" name="action">LOG IN</button>
+          </div>
+          <br><br>
+
+          <a style="margin-left:30px;" href="signup.php">sign-up</a>
+
+
+      </form>
+ <?php }?>
+
   
 </div>
 <br>
@@ -71,8 +81,10 @@
                  session_start();
                  $_SESSION['logged']=true;
                  $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
-                 //Тут в сесси нужно будет хранить id пользователя
-                 header('Location:user.php');
+                 $_SESSION['name'] = getUserName(get_db_connect(), $_SESSION['id']);
+                 header('Location:index.php');
+                 $_SESSION['auth'] = 1;
+                 $_SESSION['exit'] = 0;
              } else {echo "<center><h3>Wrong email or password!</h3><br><br></center>";}
          }
          if(isset($_POST['signup'])) {
@@ -81,8 +93,21 @@
          ?>
 		<center>
 
-<?php $i = 0; ?>
-            <?php foreach ($json['products'] as $key => $value) : ?>
+            <?php if(isset($_GET['keys']) && $_GET['keys']==1) {
+                $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
+                foreach ($keys as $key => $value) :
+                 echo  $key.':'.'<br>' ;
+                echo "<ul>";
+                foreach($value as $key) {
+                 echo "<li>$key</li>";
+                }
+                echo "</ul>";
+                echo "<br>";
+                endforeach;
+            } else {
+
+            $i = 0;
+            foreach ($json['products'] as $key => $value) : ?>
                 <form action="test.php" method="get" class="form-selector">
                     <input type="hidden" name="id" value="<?=$value['id']?>">
                     <div class="dialog" >
@@ -108,7 +133,7 @@
                 $i++;
                 if ($i%2==0) {echo '<br><br><br>';}
 
-            endforeach; ?>
+            endforeach; }?>
         </center>
      </div>
 
