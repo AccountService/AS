@@ -113,11 +113,11 @@ if(isset($_POST['name'])&&isset($_POST['email'])) {
                 <label class="Absolute-Center">confirm password:</label>
             </div>
             <div class="left-move button-move1">
-                <button class="btn waves-effect waves-light floating Absolute-Center" type="submit" name="action">LOG IN</button>
+                <button class="btn waves-effect waves-light floating Absolute-Center" type="submit" name="action">SIGN UP</button>
             </div>
             <br><br>
 
-            <a style="margin-left:30px;" href="signup.php">sign-up</a>
+            <a style="margin-left:30px;" href="index.php">login</a>
 
 
         </form>
