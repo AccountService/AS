@@ -5484,7 +5484,8 @@ small {
     justify-content: space-between; }
 .toast .btn, .toast .btn-large, .toast .btn-flat {
     margin: 0;
-    margin-left: 3rem; }
+    margin-left: 3rem;
+}
 .toast.rounded {
     border-radius: 24px; }
 @media only screen and (max-width : 600px) {
@@ -8561,8 +8562,8 @@ section > * {
 .left-move {
     margin-left: 40px;
 }
-.button-move{
-    margin-top: 10px;
+.button-move1{
+    margin-top: 20px;
 }
 .reg{
 
@@ -8572,4 +8573,12 @@ section > * {
 }
 .form-selector {
     display: inline-block;
+}
+.reg-input{
+    width:200px;
+}
+.Absolute-Center
+{
+    width: 100%;
+    text-align: center;
 }
