@@ -28,8 +28,9 @@
     <div><a href="index.php"<?= $_SESSION['keys']=0?>>Products</a></div>
     <div><a href="signup.php">Registration</a></div>
       <?php if($_SESSION['auth']==1) { ?>
-      <div><a href="index.php?exit=1">Exit</a></div>
           <div><a href="index.php?keys=1">My keys</a></div>
+      <div><a href="index.php?exit=1">Exit</a></div>
+
       <?php } ?>
   </section>
   
