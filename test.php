@@ -1,3 +1,4 @@
 <?php
     include('pdo.php');
-   echo getProductId('Product6');
+   echo getproductName( $_GET['id']);
+
