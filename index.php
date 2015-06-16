@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html >
   <head>
-    <meta charset="UTF-8">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8" />
+      <link rel="stylesheet" href="css/style.css">
+
 
      <?php include('pdo.php');
       $jsondata = file_get_contents("products.json");
       $json = json_decode($jsondata, true);
       session_start();
     ?>
-    
-    
-    
-        <link rel="stylesheet" href="css/style.css">
+
+
+
 
     
     
@@ -19,6 +21,8 @@
   </head>
 
   <body>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
     <section class="wrapper" style="float:left;">
 
@@ -29,9 +33,9 @@
   </section>
 
   <section class="menu menu--off">
-    <div><a href="#">Продукты</a></div>
-    <div><a href="#">Мои ключи</a></div>
-	<div><a href="#">Выход</a></div>
+    <div><a href="#">Products</a></div>
+    <div><a href="#">My key</a></div>
+	<div><a href="#">Exit</a></div>
   </section>
   
 </section>
@@ -47,24 +51,22 @@
       <input type="text" required>
       <span class="highlight"></span>
       <span class="bar"></span>
-      <label>Name</label>
+      <label>e-mail:</label>
     </div>
 		
     <div class="group left-move">      
       <input type="text" required>
       <span class="highlight"></span>
       <span class="bar"></span>
-      <label>Email</label>
+      <label>password:</label>
     </div>
-     <div class="button raised left-move button-move">
-      <div class="center" fit>LOG IN</div>
-      <paper-ripple fit></paper-ripple>
+     <div class="left-move button-move1">
+         <button class="btn waves-effect waves-light floating" type="submit" name="action">LOG IN</button>
     </div>
-	<br>
-		<div class="button-reg reg">
-        <div class="right" fit>sign-up</div>
-        <paper-ripple fit></paper-ripple>
-      </div>
+	<br><br>
+
+           <a style="margin-left:30px;" href="signup.php">sign-up</a>
+
 	
   </form>
  
@@ -75,31 +77,26 @@
 		<center>
 <?php $i = 0; ?>
             <?php foreach ($json['products'] as $key => $value) : ?>
-                <form action="test.php" method="post" class="form-selector">
+                <form action="test.php" method="get" class="form-selector">
                     <input type="hidden" name="id" value="<?=$value['id']?>">
                     <div class="dialog" >
 
                         <div class="content">
                             <div class="title"><?=$value['name']?></div><br>
-                            <div>Описание продукта. Тут можно писать короткое описание продукта</div>
+                            <div>Product description and other Lorem ipsum dolor sit amet...</div>
                         </div>
 
-                        <div class="button label-blue">
-                            <div class="center" fit>Купить</div>
-                            <paper-ripple fit></paper-ripple>
-                        </div>
+                        <button class="btn waves-effect waves-light floating" type="submit">$<?=$value['price']?>
 
-                        <div class="button">
-                            <div class="center" fit> <?=$value['price']?></div>
-                            <paper-ripple fit></paper-ripple>
-                        </div>
+                        </button>
+
+                        <button class="btn waves-effect waves-light" type="submit">Buy
+
+                        </button>
+
 
                     </div>
-
-
-
-
-</form>
+                </form>
 
             <?php
                 $i++;
@@ -131,9 +128,8 @@
     <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
   <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
   <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
-  
 
-   
+
 
 
   
