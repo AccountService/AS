@@ -9,7 +9,8 @@
       session_start();
     ?>
 
-<?php if(isset($_GET['exit']) && $_GET['exit'] == 1) {$_SESSION['auth']=0;}?>
+<?php if(isset($_GET['auth']) && $_GET['auth'] == 1 ) {$_SESSION['auth']=1; echo $_SESSION['auth'];}?>
+      <?php if(isset($_GET['exit']) && $_GET['exit'] == 1 && isset($_SESSION['auth'])) {$_SESSION['auth']=0;}?>
   </head>
 
   <body>
@@ -25,9 +26,9 @@
   </section>
 
   <section class="menu menu--off">
-    <div><a href="index.php"<?= $_SESSION['keys']=0?>>Products</a></div>
+    <div><a href="index.php">Products</a></div>
     <div><a href="signup.php">Registration</a></div>
-      <?php if($_SESSION['auth']==1) { ?>
+      <?php if(isset($_SESSION['auth']) && $_SESSION['auth']==1) { ?>
           <div><a href="index.php?keys=1">My keys</a></div>
       <div><a href="index.php?exit=1">Exit</a></div>
 
@@ -83,8 +84,7 @@
                  $_SESSION['logged']=true;
                  $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
                  $_SESSION['name'] = getUserName(get_db_connect(), $_SESSION['id']);
-                 header('Location:index.php');
-                 $_SESSION['auth'] = 1;
+                 header('Location:index.php?auth=1');
                  $_SESSION['exit'] = 0;
              } else {echo "<center><h3>Wrong email or password!</h3><br><br></center>";}
          }
