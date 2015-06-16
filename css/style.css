@@ -8211,7 +8211,7 @@ body {
     margin:30px auto 0;
     display:block;
     background:#FFF;
-    padding:25px 50px 50px;
+    padding:1px 50px 50px;
     padding-right:-40px!important;
 }
 .container-main		{
@@ -8241,6 +8241,10 @@ h2 small {
     position:relative;
     margin-bottom:45px;
     float:left;
+}
+.group-reg 			  {
+    position:relative;
+    margin-bottom:45px;
 }
 input 				{
     font-size:18px;
