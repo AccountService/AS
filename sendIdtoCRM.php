@@ -1,5 +1,4 @@
 <?php
-
 function sendKeyId ($key_info, $info, $address, $secret_key = null){
     $url = $address;
     $fields = array(
