@@ -118,7 +118,9 @@
 
                 Validate your key:
         <input type="text" name="key" placeholder="license key">
-         <button class="btn waves-effect waves-light floating Absolute-Center" type="submit" name="key_subm">Validate</button>
+
+       <div class="center-button">  <button class="btn waves-effect waves-light floating" type="submit" name="key_subm">Validate</button></div>
+
 
     </form>
 

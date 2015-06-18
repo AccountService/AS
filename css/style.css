@@ -7944,7 +7944,9 @@ body {
     transition: all 300ms ease-in-out;
     margin: 1em 0;
     padding: 0;
+
 }
+
 
 .background--blur {
     background: #004d40;
@@ -8246,6 +8248,7 @@ h2 small {
 .group-reg 			  {
     position:relative;
     margin-bottom:45px;
+
 }
 input 				{
     font-size:18px;
@@ -8574,11 +8577,32 @@ section > * {
 .form-selector {
     display: inline-block;
 }
-.reg-input{
-    width:200px;
-}
+
 .Absolute-Center
 {
     width: 100%;
     text-align: center;
+}
+.center{
+    width: 150px;
+    margin: 40px auto;
+
+}
+
+#myform {
+    text-align: center;
+    padding: 5px;
+    border: 1px dotted #ccc;
+    margin: 2%;
+}
+.qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
+.center-button{
+    display: table;
+    margin: 1 auto;
 }
