@@ -89,7 +89,7 @@
          <?php
          if(isset($_POST['login']) && isset($_POST['pass'])) {
              if(isAuthorize(get_db_connect(),$_POST['login'], $_POST['pass'])) {
-                 session_start('user');
+
                  $_SESSION['logged']=true;
                  $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
                  $_SESSION['name'] = getUserName(get_db_connect(), $_SESSION['id']);
@@ -101,7 +101,10 @@
          }
          ?>
 		<center>
-            <form action="" method="post">
+
+
+            <?php if(isset($_GET['keys'])) {
+                echo ' <form action="" method="post">
 
                 Validate your key:
                 <input type="text" name="key" placeholder="license key">
@@ -109,9 +112,8 @@
                 <div class="center-button">  <button class="btn waves-effect waves-light floating" type="submit" name="key_subm">Validate</button></div>
 
 
-            </form>
+            </form>';
 
-            <?php if(isset($_GET['keys'])) {
                 $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
                 foreach ($keys as $key => $value) :
                  echo  $key.':'.'<br>' ;
@@ -149,8 +151,9 @@
                         <div class="content">
                             <div class="title"><?=$value['name']?></div><br>
                             <div>Product description and other Lorem ipsum dolor sit amet...</div>
+                            Count:
                         </div>
-
+                            <input type="text" style="width:100px; margin-top:-70px; text-align:center" value="1" name="count">
                         <button class="btn waves-effect waves-light floating" type="submit">$<?=$value['price']?>
 
                         </button>
