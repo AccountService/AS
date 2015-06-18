@@ -34,9 +34,8 @@
     </section>
 
     <section class="menu menu--off">
-        <div><a href="#">Products</a></div>
-        <div><a href="#">My key</a></div>
-        <div><a href="#">Exit</a></div>
+        <div><a href="index.php">Products</a></div>
+        <div><a href="signup.php">Registration</a></div>
     </section>
 
 </section>
@@ -87,33 +86,33 @@ if(isset($_POST['name'])&&isset($_POST['email'])) {
 
 
             <div class="group-reg left-move">
-                <input type="text" class="reg-input" name="name" required >
+                <input type="text" class="reg-input inputWidth" name="name" required  style="width: 400px; padding: 2px; border: 1px outset gray;">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label class="Absolute-Center">name:</label>
             </div>
 
             <div class="group-reg left-move">
-                <input type="text" class="reg-input" name="email" required>
+                <input type="text" class="reg-input inputWidth" name="email" required style="width: 400px; padding: 2px; border: 1px outset gray;">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label class="Absolute-Center">e-mail:</label>
             </div>
             <div class="group-reg left-move">
-                <input type="password" class="reg-input" name="pass" required>
+                <input type="password" class="reg-input inputWidth" name="pass" required style="width: 400px; padding: 2px; border: 1px outset gray;">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label class="Absolute-Center">password:</label>
             </div>
 
             <div class="group-reg left-move">
-                <input type="password" class="reg-input" name="pass_again" required>
+                <input type="password" class="reg-input" name="pass_again" required style="width: 400px; padding: 2px; border: 1px outset gray;">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label class="Absolute-Center">confirm password:</label>
             </div>
-            <div class="left-move button-move1">
-                <button class="btn waves-effect waves-light floating Absolute-Center" type="submit" name="action">SIGN UP</button>
+            <div class="left-move button-move1 center-button" >
+                <button class="btn waves-effect waves-light floating " type="submit" name="action" style="">SIGN UP</button>
             </div>
             <br><br>
 
@@ -122,6 +121,9 @@ if(isset($_POST['name'])&&isset($_POST['email'])) {
 
         </form>
     </center>
+
+
+
 </div>
 
 
@@ -198,21 +200,4 @@ if(isset($_POST['name'])&&isset($_POST['email'])) {
 
 
 
-
-
-
-
-<div style="margin-top: 15%; margin-left: 43%">
-    <form method="post" action="sendreginfo.php">
-        Name:<br>
-        <input type="text" name="name" placeholder="Name"><br>
-        Email:<br>
-        <input type="email" name="email" placeholder="Email"><br>
-        Password:<br>
-        <input type="password" name="pass" placeholder="Password"><br>
-        Password again:<br>
-        <input type="password" name="pass_again" placeholder="Password again"><br>
-        <input type="submit" value="Sign up">
-    </form>
-</div>
 
