@@ -89,7 +89,7 @@
          <?php
          if(isset($_POST['login']) && isset($_POST['pass'])) {
              if(isAuthorize(get_db_connect(),$_POST['login'], $_POST['pass'])) {
-                 session_start('user');
+
                  $_SESSION['logged']=true;
                  $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
                  $_SESSION['name'] = getUserName(get_db_connect(), $_SESSION['id']);
