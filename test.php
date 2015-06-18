@@ -1,5 +1,4 @@
 <?php
-    include_once('pdo.php');
-    include_once('generator.php');
+    include('pdo.php');
+   echo getproductName( $_GET['id']);
 
-    createkeys(1,1);
