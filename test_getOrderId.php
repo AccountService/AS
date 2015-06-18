@@ -15,7 +15,7 @@ var_dump($_POST);
         $query->execute();
     }
 
-   /* foreach($keys_id as $key => $value) {
+    foreach($keys_id as $key => $value) {
         if($key=="order_id"){
             $order_id = $value;
         }
@@ -25,4 +25,5 @@ var_dump($_POST);
         if($key!="order_id") {
             setOrderId(get_db_connect(), $order_id, $value);
         }
-    }*/
+    }
+*/

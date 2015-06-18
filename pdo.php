@@ -220,3 +220,20 @@ function sendRequest ($key_info ,$info, $address, $secret_key = null){
 
     return $response;
 }
+
+function getLastKeys($db, $count) {
+    $query = $db->prepare("SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count");
+    $query->bindParam(':count',$count, PDO::PARAM_INT);
+    $query->execute();
+
+
+    $keys=$query->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($keys);
+   /* $last_keys = array();
+    for($i = count($keys) - $count; $i < count($keys); $i++){
+        $last_keys[] = $keys[$i];
+    }
+    $json_*/
+
+}
