@@ -101,6 +101,15 @@
          }
          ?>
 		<center>
+            <form action="" method="post">
+
+                Validate your key:
+                <input type="text" name="key" placeholder="license key">
+
+                <div class="center-button">  <button class="btn waves-effect waves-light floating" type="submit" name="key_subm">Validate</button></div>
+
+
+            </form>
 
             <?php if(isset($_GET['keys'])) {
                 $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
@@ -114,23 +123,15 @@
                 echo "<br>";
                 endforeach; ?>
             <div>
-    <form action="" method="post">
-
-                Validate your key:
-        <input type="text" name="key" placeholder="license key">
-
-       <div class="center-button">  <button class="btn waves-effect waves-light floating" type="submit" name="key_subm">Validate</button></div>
-
-
-    </form>
 
     <?php
         if(isset($_POST['key'])) {
             //var_dump($_POST);
             //var_dump($_SESSION['id']);
             keyValidation($_POST['key']);
+
+
             connectKeyToUser($_POST['key'], $_SESSION['id']);
-            exit();
             header('Location: index.php?keys');
         }
     ?>
