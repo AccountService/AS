@@ -2,6 +2,7 @@
 <?php
 
     include('pdo.php');
+
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
     session_start();
@@ -29,14 +30,15 @@
                 <?=  $key.':'.'<br>' ;
                 echo "<ul>";
                     foreach($value as $key) {
-                        echo "<li>$key<input type='checkbox' name=\"$key\"></li>";
+                        $id = getIDbyKey(get_db_connect(), $key);
+                        echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\"></li>";
                     }
                echo "</ul>";
                echo "<br>";?>
 
             <?php endforeach;?>
-        <input type="submit" name="Full" value="Cancel Request(Full)">
-        <input type="submit" name="Part" value="Cancel Request(Part)">
+        <input type="text" name="Amount" value="100">%
+        <input type="submit" value="Cancel Request">
     </form>
 </div>
 

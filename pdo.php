@@ -40,6 +40,15 @@
         return $keys;
     }
 
+    function getIDbyKey($db, $key) {
+        $query = $db->prepare("SELECT id FROM generated_keys where gen_key=:key");
+        $query->bindParam(':key',$key, PDO::PARAM_STR);
+        $query->execute();
+
+        $id = $query->fetch(PDO::FETCH_ASSOC);
+        return $id['id'];
+    }
+
     // Function that update 'is_marked' to 'true'
     // and create connection between user 
     // and key.
