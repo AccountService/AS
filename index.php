@@ -7,10 +7,16 @@
       $jsondata = file_get_contents("products.json");
       $json = json_decode($jsondata, true);
       session_start();
+     if(isset($_GET['exit'])) {
+         session_destroy();
+
+        echo '<script>
+                document.location.href = "index.php";
+             </script>';
+     }
     ?>
 
-<?php if(isset($_GET['auth']) && $_GET['auth'] == 1 ) {$_SESSION['auth']=1; echo $_SESSION['auth'];}?>
-      <?php if(isset($_GET['exit']) && $_GET['exit'] == 1 && isset($_SESSION['auth'])) {$_SESSION['auth']=0;}?>
+
   </head>
 
   <body>
@@ -26,12 +32,15 @@
   </section>
 
   <section class="menu menu--off">
-    <div><a href="index.php">Products</a></div>
-    <div><a href="signup.php">Registration</a></div>
-      <?php if(isset($_SESSION['auth']) && $_SESSION['auth']==1) { ?>
-          <div><a href="index.php?keys=1">My keys</a></div>
-      <div><a href="index.php?exit=1">Exit</a></div>
 
+      <?php if(isset($_SESSION['name'])) { ?>
+          <div><a href="index.php">Products</a></div>
+          <div><a href="index.php?keys">My keys</a></div>
+      <div><a href="index.php?exit">Exit</a></div>
+
+      <?php } else { ?>
+      <div><a href="index.php">Products</a></div>
+      <div><a href="signup.php">Registration</a></div>
       <?php } ?>
   </section>
   
@@ -41,7 +50,7 @@
 </div>
  <div class="container-form">
 
-  <?php if(isset($_SESSION['auth']) && $_SESSION['auth']==1) {
+  <?php if(isset($_SESSION['name'])) {
       $name = $_SESSION['name'];
       echo "<h2>Hello, $name</h2>";
   } else {?>
@@ -80,21 +89,20 @@
          <?php
          if(isset($_POST['login']) && isset($_POST['pass'])) {
              if(isAuthorize(get_db_connect(),$_POST['login'], $_POST['pass'])) {
-                 session_start();
+                 session_start('user');
                  $_SESSION['logged']=true;
                  $_SESSION['id'] = getUserId(get_db_connect(), $_POST['login']);
                  $_SESSION['name'] = getUserName(get_db_connect(), $_SESSION['id']);
-                 header('Location:index.php?auth=1');
-                 $_SESSION['exit'] = 0;
+                 echo '<script>
+                document.location.href = "index.php";
+             </script>';
              } else {echo "<center><h3>Wrong email or password!</h3><br><br></center>";}
-         }
-         if(isset($_POST['signup'])) {
-             header('Location: signup.php');
+
          }
          ?>
 		<center>
 
-            <?php if(isset($_GET['keys']) && $_GET['keys']==1) {
+            <?php if(isset($_GET['keys'])) {
                 $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
                 foreach ($keys as $key => $value) :
                  echo  $key.':'.'<br>' ;
@@ -104,8 +112,30 @@
                 }
                 echo "</ul>";
                 echo "<br>";
-                endforeach;
-            } else {
+                endforeach; ?>
+            <div>
+    <form action="" method="post">
+
+                Validate your key:
+        <input type="text" name="key" placeholder="license key">
+         <button class="btn waves-effect waves-light floating" type="submit" name="key_subm">Validate</button>
+
+    </form>
+
+    <?php
+        if(isset($_POST['key'])) {
+            //var_dump($_POST);
+            //var_dump($_SESSION['id']);
+            keyValidation($_POST['key']);
+            connectKeyToUser($_POST['key'], $_SESSION['id']);
+            exit();
+            header('Location: index.php?keys');
+        }
+    ?>
+
+     </div>
+
+          <?php  } else {
 
             $i = 0;
             foreach ($json['products'] as $key => $value) : ?>
