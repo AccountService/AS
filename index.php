@@ -43,10 +43,10 @@
       <div><a href="signup.php">Registration</a></div>
       <?php } ?>
   </section>
-  
+
 </section>
 <div style="float:left;">
-	
+
 </div>
  <div class="container-form">
 
@@ -82,7 +82,7 @@
       </form>
  <?php }?>
 
-  
+
 </div>
 <br>
 	 <div class="container-main">
