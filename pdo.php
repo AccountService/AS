@@ -30,7 +30,7 @@
 
     function getMarkedKeys($db) {
         $keys = array();
-        $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE is_marked = 1 AND user_ID IS NULL");
+        $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE is_marked = 1 AND user_ID = 0");
         $query->execute();
 
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
@@ -201,25 +201,22 @@ function sendData($key_info ,$info, $address, $secret_key = null){
     return $response;
 }
 
-function echoCounter() {
-    echo '              <div class="form-group">
-						    <input id="colorful" class="form-control" type="number" value="1" min="1" max="10" />
-                        </div>
+function sendRequest ($key_info ,$info, $address, $secret_key = null){
+    $url = $address;
+    $fields = array(
+        $key_info => $info,
+        'secret_key' => $secret_key
+    );
 
-                        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-                        <script src="bootstrap-number-input.js" ></script>
-                        <script>
-                            // Remember set you events before call bootstrapSwitch or they will fire after bootstrapSwitchs events
-                            $("[name=\'checkbox2\']").change(function() {
-                                    if(!confirm(\'Do you wanna cancel me!\')) {
-                                       this.checked = true;
-                                     }
-                            });
+    $fields_str = '';
+    foreach($fields as $key=>$value) { $fields_str .= $key.'='.$value.'&'; }
+    $fields_str = trim($fields_str, '&');
 
-                            $(\'#after\').bootstrapNumber();
-                            $(\'#colorful\').bootstrapNumber({
-	                        upClass: \'success\',
-	                        downClass: \'danger\'
-                            });
-                        </script>';
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_str);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    return $response;
 }
