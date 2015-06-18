@@ -30,7 +30,7 @@
 
     function getMarkedKeys($db) {
         $keys = array();
-        $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE is_marked = 1 AND user_ID IS NULL");
+        $query = $db->prepare("SELECT gen_key FROM generated_keys WHERE is_marked = 1 AND user_ID = 0");
         $query->execute();
 
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){

@@ -21,7 +21,7 @@ function sendKeyId ($key_info, $info, $address, $secret_key = null){
 
 
 $cancel_info = array(
-    'keys' => '1,2,3,4,5,6,7,8,9,10,11',
+    'keys' => array(1,2,3,4,5,6,7,8,9,10,11),
     'email' => 'ololo@ololo',
     'orderId' => '12',
     'ammount' => '117'
