@@ -1,10 +1,10 @@
 <?php
-include_once('generator.php');
+include_once('pdo.php');
 
 
     $json = json_decode($_POST['data'],true);
+    $id_product = $json['id_product'];
+    $count = $json['count'];
 
-
-    echo $json['id_product'];
-    echo $json['count'];
+    var_dump(getGeneratedKeysId(get_db_connect(),  $id_product, $count));
 ?>
