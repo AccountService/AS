@@ -113,9 +113,7 @@
 
 
             </form>';
-?>
-            <form action="test.php" method="post">
-                <?php
+                echo '<form action="cancelRequest.php" method="post">';
                 $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
                 foreach ($keys as $key => $value) :
                  echo  "<h5>".$key.":"."</h5>" ;
@@ -127,9 +125,9 @@
                 echo "</ul>";
                 echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
                 <span style='display:inline-block'>%</span><div class='center-button'>
-                <button class='btn waves-effect waves-light floating' type='submit' name='key_subm'>Cancel request</button></div>";
+                <button class='btn waves-effect waves-light floating' type='submit'>Cancel request</button></div>";
                 echo "<br>";
-                endforeach; ?>
+                endforeach; echo "</form>"?>
 
             <div>
 
