@@ -250,7 +250,12 @@ function getGeneratedKeysId($db, $prod_id, $count) {
     $query->bindParam(':count',$count, PDO::PARAM_INT);
     $query->execute();
     $key_id = $query->fetchAll(PDO::FETCH_ASSOC);
-    return $key_id;
+    $key_ids = array();
+    foreach($key_id as $key => $value) {
+        $key_ids[$value['id']] = $value['gen_key'];
+    }
+
+    return $key_ids;
 }
 
-
+var_dump(getGeneratedKeysId(get_db_connect(), 1, 3));

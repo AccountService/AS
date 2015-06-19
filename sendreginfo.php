@@ -1,8 +1,5 @@
 <?php
 
-$regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
-$regInfo = json_encode($regInfo);
-
 function sendData($key_info ,$info, $address, $secret_key = null){
     $url = $address;
     $fields = array(
