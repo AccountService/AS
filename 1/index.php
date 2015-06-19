@@ -147,15 +147,7 @@
     
     </div>
 		</center>
-         <?php foreach ($json['products'] as $key => $value) : ?>
-         <form action="test.php" method="post">
-             <input type="hidden" name="id" value="<?=$value['id']?>">
-             <?=$value['name']?>
-             cost:    <?=$value['price']?>
-             <input type="submit" value="Buy">
-             <br>
-         </form>
-         <?php endforeach; ?>
+
 	 </div>
 	 
     
@@ -164,7 +156,7 @@
     <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
   <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
   <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
-  
+
 
    
 

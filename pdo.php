@@ -257,3 +257,10 @@ function getGeneratedKeysId($db, $prod_id, $count) {
 
     return $key_ids;
 }
+
+
+function deleteKey($db, $key_id) {
+    $query = $db->prepare("DELETE FROM generated_keys WHERE id=:key_id");
+    $query->bindParam(':key_id',$key_id, PDO::PARAM_INT);
+    $query->execute();
+}

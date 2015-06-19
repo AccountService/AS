@@ -72,7 +72,7 @@
                 $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
                 $regInfo = json_encode($regInfo);
                 include('sendreginfo.php');
-             echo sendData("reg_info", $regInfo,"/10.55.33.");
+             echo sendData("reg_info", $regInfo,"10.55.33.34/signupsend.php");
                 exit();
                 echo "<script>location.href = 'index.php';</script>";
             } else {

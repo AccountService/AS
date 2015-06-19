@@ -116,14 +116,19 @@
 
                 $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
                 foreach ($keys as $key => $value) :
-                 echo  $key.':'.'<br>' ;
+                 echo  "<h5>".$key.":"."</h5>" ;
                 echo "<ul>";
                 foreach($value as $key) {
-                 echo "<li>$key</li>";
+                    $id = getIDbyKey(get_db_connect(), $key);
+                    echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
                 }
                 echo "</ul>";
+                echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
+                <span style='display:inline-block'>%</span><div class='center-button'>
+                <button class='btn waves-effect waves-light floating' type='submit' name='key_subm'>Cancel request</button></div>";
                 echo "<br>";
                 endforeach; ?>
+
             <div>
 
     <?php
@@ -172,6 +177,7 @@
 
             endforeach; }?>
         </center>
+
      </div>
 
         <script src="js/index.js"></script>
