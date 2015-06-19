@@ -6,5 +6,5 @@ include_once('pdo.php');
     $id_product = $json['id_product'];
     $count = $json['count'];
 
-    var_dump(getGeneratedKeysId(get_db_connect(),  $id_product, $count));
+    echo json_encode(getGeneratedKeysId(get_db_connect(),  $id_product, $count));
 ?>
