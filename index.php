@@ -149,7 +149,7 @@
 
             $i = 0;
             foreach ($json['products'] as $key => $value) : ?>
-                <form action="test.php" method="get" class="form-selector">
+                <form action="http://10.55.33.35/product.php" method="get" class="form-selector">
                     <input type="hidden" name="id" value="<?=$value['id']?>">
                     <div class="dialog" >
 
