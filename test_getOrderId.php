@@ -1,29 +1,17 @@
 <?php
+    include('pdo.php');
+    $keys = array('orders'=>'{"order_id":2,"keys":[1,2,4,5,7]}', 'secret_key'=>"");
 
-var_dump($_POST);
+    $keys_id = json_decode($keys['orders']);
 
 
-/*
-    //$keys = $_POST['order_keys'];
-    $keys = array("order_id"=>69, "keys")
-    $keys_id = json_decode($keys);
-    var_dump($keys);
-    function setOrderId($db, $order_id, $key_id) {
-        $query = $db->prepare("UPDATE generated_keys SET order_ID = :order_id WHERE id = :key_id");
-        $query->bindParam(':order_id', $order_id, PDO::PARAM_STR);
-        $query->bindParam(':id', $key_id, PDO::PARAM_STR);
-        $query->execute();
-    }
-
-    foreach($keys_id as $key => $value) {
-        if($key=="order_id"){
-            $order_id = $value;
+    function setOrderId($db, $keys_id) {
+        for($i=0; $i<count($keys_id->keys); $i++) {
+            $query = $db->prepare("UPDATE generated_keys SET order_ID = :order_id WHERE id = :key_id");
+            $query->bindParam(':order_id', $keys_id->order_id, PDO::PARAM_STR);
+            $query->bindParam(':key_id', $keys_id->keys[$i], PDO::PARAM_STR);
+            $query->execute();
         }
     }
 
-    foreach ($keys_id as $key => $value) {
-        if($key!="order_id") {
-            setOrderId(get_db_connect(), $order_id, $value);
-        }
-    }
-*/
+setOrderId(get_db_connect(), $keys_id);
