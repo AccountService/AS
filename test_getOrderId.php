@@ -1,7 +1,7 @@
 <?php
 
 var_dump($_POST);
-
+file_put_contents('testssss', $_POST);
 
 /*
     //$keys = $_POST['order_keys'];
