@@ -258,4 +258,3 @@ function getGeneratedKeysId($db, $prod_id, $count) {
     return $key_ids;
 }
 
-var_dump(getGeneratedKeysId(get_db_connect(), 1, 3));
