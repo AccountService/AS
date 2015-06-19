@@ -113,7 +113,9 @@
 
 
             </form>';
-
+?>
+            <form action="test.php" method="post">
+                <?php
                 $keys = getAllBuyedKeys($_SESSION['id'], get_db_connect());
                 foreach ($keys as $key => $value) :
                  echo  "<h5>".$key.":"."</h5>" ;
