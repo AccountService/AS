@@ -234,15 +234,23 @@ function getLastKeys($db, $count) {
     $query = $db->prepare("SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count");
     $query->bindParam(':count',$count, PDO::PARAM_INT);
     $query->execute();
-
-
     $keys=$query->fetchAll(PDO::FETCH_ASSOC);
-
-    var_dump($keys);
-   /* $last_keys = array();
-    for($i = count($keys) - $count; $i < count($keys); $i++){
-        $last_keys[] = $keys[$i];
-    }
-    $json_*/
-
+    return $keys;
 }
+
+function getGeneratedKeysId($db, $prod_id, $count) {
+    include_once('generator.php');
+    for($i=0; $i<$count; $i++) {
+        $key = generate_key($prod_id);
+        $query = $db->prepare("INSERT INTO generated_keys (gen_key) VALUES (:key)");
+        $query->bindParam(':key',$key, PDO::PARAM_INT);
+        $query->execute();
+    }
+    $query = $db->prepare("SELECT id, gen_key FROM generated_keys ORDER BY id DESC LIMIT :count");
+    $query->bindParam(':count',$count, PDO::PARAM_INT);
+    $query->execute();
+    $key_id = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $key_id;
+}
+
+
