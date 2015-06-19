@@ -51,11 +51,11 @@
 <div class="container-main">
 
     <?php
-if(isset($_POST['name'])&&isset($_POST['email'])) {
+/*if(isset($_POST['name'])&&isset($_POST['email'])) {
     $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
 
     $regInfo = json_encode($regInfo);
-    //var_dump($regInfo);
+    //var_dump($regInfo);*/
 
 
 
@@ -69,14 +69,17 @@ if(isset($_POST['name'])&&isset($_POST['email'])) {
         } else {
             if ($_POST['pass'] == $_POST['pass_again']) {
                 registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
-
-
+                $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
+                $regInfo = json_encode($regInfo);
+                include('sendreginfo.php');
+             echo sendData("reg_info", $regInfo,"10.55.33.34/signupsend.php");
+                exit();
                 echo "<script>location.href = 'index.php';</script>";
             } else {
                 echo "<center><h2>Passwords do not match!</h2></center>";
             }
         }
-    }
+
 }
     ?>
 

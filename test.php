@@ -1,5 +1,4 @@
 <?php
     include('pdo.php');
-    //echo getproductName( $_GET['id']);
-
-    getLastKeys(get_db_connect(), 6);
+include('generator.php');
+createkeys(5,4);
