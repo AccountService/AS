@@ -40,6 +40,15 @@
         return $keys;
     }
 
+    function getIDbyKey($db, $key) {
+        $query = $db->prepare("SELECT id FROM generated_keys where gen_key=:key");
+        $query->bindParam(':key',$key, PDO::PARAM_STR);
+        $query->execute();
+
+        $id = $query->fetch(PDO::FETCH_ASSOC);
+        return $id['id'];
+    }
+
     // Function that update 'is_marked' to 'true'
     // and create connection between user 
     // and key.
@@ -219,4 +228,21 @@ function sendRequest ($key_info ,$info, $address, $secret_key = null){
     curl_close($ch);
 
     return $response;
+}
+
+function getLastKeys($db, $count) {
+    $query = $db->prepare("SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count");
+    $query->bindParam(':count',$count, PDO::PARAM_INT);
+    $query->execute();
+
+
+    $keys=$query->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($keys);
+   /* $last_keys = array();
+    for($i = count($keys) - $count; $i < count($keys); $i++){
+        $last_keys[] = $keys[$i];
+    }
+    $json_*/
+
 }

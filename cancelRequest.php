@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+include('pdo.php');
+
 function sendKeyId ($key_info, $info, $address, $secret_key = null){
     $url = $address;
     $fields = array(
@@ -20,16 +24,28 @@ function sendKeyId ($key_info, $info, $address, $secret_key = null){
     return $response;
 }
 
+$returnedInfo = array();
 
-$cancel_info = array(
-    'keys' => array(1,2,3,4,5,6,7,8,9,10,11),
-    'email' => 'ololo@ololo',
-    'orderId' => '12',
-    'ammount' => '117'
+foreach($_POST as $key => $value){
+    array_push($returnedInfo, $value);
+}
+
+$amount = array_pop($returnedInfo);
+
+$cancel_info = array (
+    'email' => getUserEmail(get_db_connect(), $_SESSION['id']),
+    'key_id' => $returnedInfo,
+    'amount' => $amount
 );
 
+
+
 $info = json_encode($cancel_info);
-var_dump($info);
+
+
+echo $info;
+
+
 $answer = sendKeyId('cancel_info', $info, '10.55.33.27/dev/addRefund.php');
 
 
