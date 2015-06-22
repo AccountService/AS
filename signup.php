@@ -73,7 +73,6 @@
                 $regInfo = json_encode($regInfo);
                 include('sendreginfo.php');
              echo sendData("reg_info", $regInfo,"10.55.33.34/signupsend.php");
-                exit();
                 echo "<script>location.href = 'index.php';</script>";
             } else {
                 echo "<center><h2>Passwords do not match!</h2></center>";

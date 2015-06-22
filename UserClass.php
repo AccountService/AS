@@ -3,7 +3,7 @@
         private $name;
         private $email;
         private $password;
-        private $buyedKeys;
+        private $buyedKeys = array();
 
         public function __construct($name, $email, $password) {
             $this->name = $name;
@@ -23,7 +23,8 @@
             return $this->password;
         }
 
-        public function setBuyedKeys($key){
+        public function setBuyedKey($key) {
             $this->buyedKeys[] = $key;
         }
+
     }
