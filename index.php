@@ -125,9 +125,11 @@
                 echo "</ul>";
                 echo "<br>";
                 endforeach;
-                echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
-                <span style='display:inline-block'>%</span><div class='center-button'>
-                <button class='btn waves-effect waves-light floating' type='submit'>Cancel request</button></div>";
+                if(!empty($keys)) {
+                    echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
+                    <span style='display:inline-block'>%</span><div class='center-button'>
+                    <button class='btn waves-effect waves-light floating' type='submit'>Cancel request</button></div>";
+                }
                 echo "</form>"?>
 
             <div>

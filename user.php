@@ -34,7 +34,7 @@
                         echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\"></li>";
                     }
                echo "</ul>";
-               echo "<br>";?>
+               echo "<br>";?>z
 
             <?php endforeach;?>
         <input type="text" name="Amount" value="100">%
