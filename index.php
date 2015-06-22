@@ -158,11 +158,11 @@
 
                         <div class="content">
                             <div class="title"><?=$value['name']?></div><br>
-                            <div>Product description and other Lorem ipsum dolor sit amet...</div>
+                            <div><?=$value['description']?></div>
                             Count:
                         </div>
                             <input type="text" style="width:100px; margin-top:-70px; text-align:center" value="1" name="count">
-                        <button class="btn waves-effect waves-light floating" type="submit">$<?=$value['price']?>
+                        <button class="btn waves-effect waves-light floating" type="submit">$<?=(float)$value['price']?>
 
                         </button>
 
@@ -174,10 +174,9 @@
                     </div>
                 </form>
 
-            <?php
+             <?php
                 $i++;
                 if ($i%2==0) {echo '<br><br><br>';}
-
             endforeach; }?>
         </center>
 

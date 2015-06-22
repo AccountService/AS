@@ -65,15 +65,15 @@
     include_once('pdo.php');
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
         if(isUserExist(get_db_connect(), $_POST['email'])) {
-            echo "<center>User is already exist!</center>";
+            echo "<center>User is already exist!<br><br></center>";
         } else {
             if ($_POST['pass'] == $_POST['pass_again']) {
                 registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
                 $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
                 $regInfo = json_encode($regInfo);
                 include('sendreginfo.php');
-             echo sendData("reg_info", $regInfo,"10.55.33.34/signupsend.php");
-                exit();
+              sendData("reg_info", $regInfo,"10.55.33.34/signupsend.php");
+
                 echo "<script>location.href = 'index.php';</script>";
             } else {
                 echo "<center><h2>Passwords do not match!</h2></center>";

@@ -71,13 +71,10 @@
     //Function that fill 'user_ID' column
     function connectKeyToUser($key, $user_id) {
         $allMarkedKeys = getMarkedKeys(get_db_connect());
-
         if(in_array($key, $allMarkedKeys)) {
             addUserID($key, $user_id, get_db_connect());
-
             return true;
         }
-
         return false;
     }
 
