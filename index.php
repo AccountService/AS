@@ -172,10 +172,9 @@
                     </div>
                 </form>
 
-            <?php
+             <?php
                 $i++;
                 if ($i%2==0) {echo '<br><br><br>';}
-
             endforeach; }?>
         </center>
 
