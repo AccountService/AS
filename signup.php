@@ -69,10 +69,11 @@
         } else {
             if ($_POST['pass'] == $_POST['pass_again']) {
                 registration(get_db_connect(), $_POST['name'], $_POST['email'], $_POST['pass']);
-                $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email']);
+                $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email'], 'id' => getUserId(get_db_connect(),$_POST['email']));
                 $regInfo = json_encode($regInfo);
                 include('sendreginfo.php');
-             echo sendData("reg_info", $regInfo,"10.55.33.34/signupsend.php");
+             echo( sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php"));
+                exit();
                 echo "<script>location.href = 'index.php';</script>";
             } else {
                 echo "<center><h2>Passwords do not match!</h2></center>";
