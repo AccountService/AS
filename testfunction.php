@@ -28,8 +28,8 @@ abstract Class dbConnector
             $this->db = new PDO("mysql:host={$config['host']};dbname={$config['db_name']};", $config['user'], $config['password']);
         }
 
-        public function addkey($newkey,$new_key){
-            $arrayOfParams =[$newkey => $new_key];
+        public function addkey($new_key){
+            $arrayOfParams =['newkey' => $new_key];
             $this->queryExecute($this->db,'INSERT INTO generated_keys (gen_key) VALUES (:newkey)',$arrayOfParams);
         }
 
@@ -53,8 +53,8 @@ abstract Class dbConnector
             return $keys;
         }
 
-        public function getIDbyKey($key,$value_key) {
-            $arrayOfParams =[$key => $value_key];
+        public function getIDbyKey($value_key) {
+            $arrayOfParams =['key' => $value_key];
             $query = $this->queryExecute($this->db,'SELECT id FROM generated_keys where gen_key=:key',$arrayOfParams);
             $id = $query->fetch(PDO::FETCH_ASSOC);
             return $id['id'];
@@ -175,7 +175,7 @@ abstract Class dbConnector
 
 
         public function deleteKey($key_id) {
-            $arrayOfParams =[':key_id' => $key_id];
+            $arrayOfParams =['key_id' => $key_id];
             $this->queryExecute($this->db,'DELETE FROM generated_keys WHERE id=:key_id',$arrayOfParams);
 
         }
@@ -219,7 +219,7 @@ abstract Class dbConnector
         }
 
         public function connectKeyToUser($key, $user_id) {
-            $allMarkedKeys = getMarkedKeys(get_db_connect());
+            $allMarkedKeys = $this->getMarkedKeys($this->db);
             if(in_array($key, $allMarkedKeys)) {
                 $this->addUserID($key, $user_id);
                 return true;
@@ -255,3 +255,5 @@ abstract Class dbConnector
         }
 
     }
+$Adapter = new Adapter();
+

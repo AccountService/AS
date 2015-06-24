@@ -37,8 +37,8 @@
             $this->db = new PDO("mysql:host={$config['host']};dbname={$config['db_name']};", $config['user'], $config['password']);
         }
 
-        public function addkey($newkey,$new_key){
-            $arrayOfParams =[$newkey => $new_key];
+        public function addkey($new_key){
+            $arrayOfParams =['newkey' => $new_key];
             $this->queryExecute($this->db,'INSERT INTO generated_keys (gen_key) VALUES (:newkey)',$arrayOfParams);
         }
 
@@ -58,8 +58,8 @@
             return $keys;
         }
 
-        public function getIDbyKey($key,$value_key) {
-            $arrayOfParams =[$key => $value_key];
+        public function getIDbyKey($value_key) {
+            $arrayOfParams =['key' => $value_key];
             $query = $this->queryExecute($this->db,'SELECT id FROM generated_keys where gen_key=:key',$arrayOfParams);
             $id = $query->fetch(PDO::FETCH_ASSOC);
             return $id['id'];
