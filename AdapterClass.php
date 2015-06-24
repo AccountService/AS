@@ -45,9 +45,7 @@
         public function getKeys() {
             $query = $this->queryExecute($this->db,'SELECT gen_key FROM generated_keys WHERE is_marked = 0');
 
-            while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $keys[] = $row['gen_key'];
-            }
+            $keys = $this->fetcher($query);
 
             return $keys;
         }
@@ -55,9 +53,7 @@
         public function getMarkedKeys() {
             $query = $this->queryExecute($this->db,'SELECT gen_key FROM generated_keys WHERE is_marked = 1 AND user_ID = 0');
 
-            while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $keys[] = $row['gen_key'];
-            }
+            $keys = $this->fetcher($query);
 
             return $keys;
         }
@@ -88,9 +84,7 @@
             $arrayOfParams =['user_ID' => $value_user_ID];
             $query = $this->queryExecute($this->db,'SELECT gen_key FROM generated_keys WHERE user_ID = :user_ID',$arrayOfParams);
 
-            while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-                $keys_body[] = $row['gen_key'];
-            }
+            $keys_body = $this->fetcher($query);
             if(isset($keys_body)) {
                 foreach ($keys_body as $key => $value) {
                     $keys[$this->getproductName($value[0])][] = $value;
@@ -100,12 +94,12 @@
         }
 
         public function registration($name, $email, $password) {
-            $arrayOfParams =[':name' => $name, ':email' => $email, ':password' => $password];
+            $arrayOfParams =['name' => $name, 'email' => $email, 'password' => $password];
             $this->queryExecute($this->db,'INSERT INTO users (name, email, password) VALUES (:name, :email, password(:password))',$arrayOfParams);
         }
 
         public function isUserExist($email) {
-            $arrayOfParams =[':email' => $email];
+            $arrayOfParams =['email' => $email];
             $query = $this->queryExecute($this->db,'SELECT email FROM users WHERE email=:email',$arrayOfParams);
 
             if($query->fetch(PDO::FETCH_ASSOC) == false) {
@@ -117,7 +111,7 @@
         }
 
         public function isAuthorize($email, $password) {
-            $arrayOfParams =[':email' => $email, ':password' => $password];
+            $arrayOfParams =['email' => $email, 'password' => $password];
             $query = $this->queryExecute($this->db,'SELECT * FROM users WHERE email=:email AND password=password(:password)',$arrayOfParams);
 
             if($query->fetch(PDO::FETCH_ASSOC) != false) {
@@ -129,7 +123,7 @@
         }
 
         public function getUserId($email) {
-            $arrayOfParams =[':email' => $email];
+            $arrayOfParams =['email' => $email];
             $query = $this->queryExecute($this->db,'SELECT user_id FROM users where email=:email',$arrayOfParams);
 
             $id = $query->fetch(PDO::FETCH_ASSOC);
@@ -137,7 +131,7 @@
         }
 
         public function getUserName($id) {
-            $arrayOfParams =[':id' => $id];
+            $arrayOfParams =['id' => $id];
             $query = $this->queryExecute($this->db,'SELECT name FROM users where user_id=:id',$arrayOfParams);
 
             $name = $query->fetch(PDO::FETCH_ASSOC);
@@ -145,7 +139,7 @@
         }
 
         public function getUserEmail($id) {
-            $arrayOfParams =[':id' => $id];
+            $arrayOfParams =['id' => $id];
             $query = $this->queryExecute($this->db,'SELECT email FROM users where user_id=:id',$arrayOfParams);
 
             $email = $query->fetch(PDO::FETCH_ASSOC);
@@ -153,7 +147,7 @@
         }
 
         public function getLastKeys($count) {
-            $arrayOfParams =[':count' => $count];
+            $arrayOfParams =['count' => $count];
             $query = $this->queryExecute($this->db,'SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
 
             $keys=$query->fetchAll(PDO::FETCH_ASSOC);
@@ -165,11 +159,11 @@
             for($i=0; $i<$count; $i++) {
                 $key = generate_key($prod_id);
 
-                $arrayOfParams =[':key' => $key];
+                $arrayOfParams =['key' => $key];
                 $this->queryExecute($this->db,'INSERT INTO generated_keys (gen_key) VALUES (:key)',$arrayOfParams);
 
             }
-            $arrayOfParams =[':count' => $count];
+            $arrayOfParams =['count' => $count];
             $query = $this->queryExecute($this->db,'SELECT id, gen_key FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
 
 
@@ -184,7 +178,7 @@
 
 
         public function deleteKey($key_id) {
-            $arrayOfParams =[':key_id' => $key_id];
+            $arrayOfParams =['key_id' => $key_id];
             $this->queryExecute($this->db,'DELETE FROM generated_keys WHERE id=:key_id',$arrayOfParams);
 
         }
@@ -228,7 +222,7 @@
         }
 
         public function connectKeyToUser($key, $user_id) {
-            $allMarkedKeys = getMarkedKeys(get_db_connect());
+            $allMarkedKeys = $this->getMarkedKeys($this->db);
             if(in_array($key, $allMarkedKeys)) {
                 $this->addUserID($key, $user_id);
                 return true;
@@ -264,4 +258,3 @@
         }
 
     }
-
