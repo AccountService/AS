@@ -97,7 +97,7 @@ abstract Class dbConnector
 
         public function isUserExist($email) {
             $arrayOfParams =[':email' => $email];
-            $this->queryExecute($this->db,'SELECT email FROM users WHERE email=:email',$arrayOfParams);
+            $query = $this->queryExecute($this->db,'SELECT email FROM users WHERE email=:email',$arrayOfParams);
 
             if($query->fetch(PDO::FETCH_ASSOC) == false) {
                 return false;
@@ -109,7 +109,7 @@ abstract Class dbConnector
 
         public function isAuthorize($email, $password) {
             $arrayOfParams =[':email' => $email, ':password' => $password];
-            $this->queryExecute($this->db,'SELECT * FROM users WHERE email=:email AND password=password(:password)',$arrayOfParams);
+            $query = $this->queryExecute($this->db,'SELECT * FROM users WHERE email=:email AND password=password(:password)',$arrayOfParams);
 
             if($query->fetch(PDO::FETCH_ASSOC) != false) {
                 return true;
@@ -120,8 +120,8 @@ abstract Class dbConnector
         }
 
         public function getUserId($email) {
-            $arrayOfParams =[':email' => $email, ':password' => $password];
-            $this->queryExecute($this->db,'SELECT user_id FROM users where email=:email',$arrayOfParams);
+            $arrayOfParams =[':email' => $email];
+            $query = $this->queryExecute($this->db,'SELECT user_id FROM users where email=:email',$arrayOfParams);
 
             $id = $query->fetch(PDO::FETCH_ASSOC);
             return $id['user_id'];
@@ -129,7 +129,7 @@ abstract Class dbConnector
 
         public function getUserName($id) {
             $arrayOfParams =[':id' => $id];
-            $this->queryExecute($this->db,'SELECT name FROM users where user_id=:id',$arrayOfParams);
+            $query = $this->queryExecute($this->db,'SELECT name FROM users where user_id=:id',$arrayOfParams);
 
             $name = $query->fetch(PDO::FETCH_ASSOC);
             return $name['name'];
@@ -137,7 +137,7 @@ abstract Class dbConnector
 
         public function getUserEmail($id) {
             $arrayOfParams =[':id' => $id];
-            $this->queryExecute($this->db,'SELECT email FROM users where user_id=:id',$arrayOfParams);
+            $query = $this->queryExecute($this->db,'SELECT email FROM users where user_id=:id',$arrayOfParams);
 
             $email = $query->fetch(PDO::FETCH_ASSOC);
             return $email['email'];
@@ -145,7 +145,7 @@ abstract Class dbConnector
 
         public function getLastKeys($count) {
             $arrayOfParams =[':count' => $count];
-            $this->queryExecute($this->db,'SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
+            $query = $this->queryExecute($this->db,'SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
 
             $keys=$query->fetchAll(PDO::FETCH_ASSOC);
             return $keys;
@@ -161,7 +161,7 @@ abstract Class dbConnector
 
             }
             $arrayOfParams =[':count' => $count];
-            $this->queryExecute($this->db,'SELECT id, gen_key FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
+            $query = $this->queryExecute($this->db,'SELECT id, gen_key FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
 
 
             $key_id = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -255,6 +255,3 @@ abstract Class dbConnector
         }
 
     }
-
-$Adapter = new Adapter();
-var_dump($Adapter->getAllBuyedKeys('user_ID', 1));
