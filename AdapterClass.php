@@ -150,10 +150,10 @@
 
 
         public function getGeneratedKeysId($prod_id, $count) {
-            include_once('generator.php');
+            include_once('KeyClass.php');
             $answer = [];
             for($i=0; $i<$count; $i++) {
-                $key = generate_key($prod_id);
+                $key = Key::generate($prod_id);
                 $arrayOfParams = ['key' => $key];
                 $this->queryExecute($this->db, 'INSERT INTO generated_keys (gen_key) VALUES (:key)', $arrayOfParams);
 
