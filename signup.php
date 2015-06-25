@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-    <?php include_once('AdapterClass.php');
+    <?php
+    include_once('AdapterClass.php');
+    include_once('UserClass.php');
+
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
     session_start();
+
     ?>
 
 
@@ -64,15 +68,18 @@
     $DB = new db();
 
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
-        if($DB->isUserExist($_POST['email'])) {
+        $user = new User($_POST['name'],  $_POST['email'], $_POST['pass']);
+
+        if($DB->isUserExist($user->getEmail())) {
             echo "<center>User is already exist!<br><br></center>";
         }   else {
                 if ($_POST['pass'] == $_POST['pass_again']) {
-                    $DB->registration($_POST['name'], $_POST['email'], $_POST['pass']);
-                    $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email'], 'id' => $DB->getUserId($_POST['email']));
+                    $DB->registration($user->getName(), $user->getEmail(), $user->getPassword());
+                    $user->setID($DB->getUserId($user->getEmail()));
+                    $regInfo = array('name' => $user->getName(), 'email' => $user->getEmail(), 'id' => $user->getID());
                     $regInfo = json_encode($regInfo);
-                    include('sendreginfo.php');
-                    echo( $DB->sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php"));
+                    $DB->sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php");
+
                     echo "<script>location.href = 'index.php';</script>";
                 } else {
                     echo "<center><h2>Passwords do not match!<br><br></h2></center>";

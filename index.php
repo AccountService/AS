@@ -7,6 +7,7 @@
 
     <?php
     include_once('AdapterClass.php');
+    include_once('UserClass.php');
 
     $DB = new db();
 
@@ -101,8 +102,11 @@
         if($DB->isAuthorize($_POST['login'], $_POST['pass'])) {
 
             $_SESSION['logged']=true;
+            $_SESSION['login'] = $_POST['login'];
+            $_SESSION['pass'] = $_POST['pass'];
             $_SESSION['id'] = $DB->getUserId($_POST['login']);
             $_SESSION['name'] = $DB->getUserName($_SESSION['id']);
+
             echo '<script>
             document.location.href = "index.php";
             </script>';
@@ -130,21 +134,23 @@
 
         echo '
             <form action="cancelRequest.php" method="post">';
-                $keys = $DB->getAllBuyedKeys($_SESSION['id']);
-
-                foreach ($keys as $key => $value) :
-                    echo  "<h5>".$key.":"."</h5>" ;
-                    echo "<ul>";
-
-                    foreach($value as $key) {
-                        $id = $DB->getIDbyKey($key);
-                        echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
-                    }
-
-                    echo "</ul>";
-                    echo "<br>";
-
-                endforeach;
+//                $keys = $DB->getAllBuyedKeys($_SESSION['id']);
+//
+//                foreach ($keys as $key => $value) :
+//                    echo  "<h5>".$key.":"."</h5>" ;
+//                    echo "<ul>";
+//
+//                    foreach($value as $key) {
+//                        $id = $DB->getIDbyKey($key);
+//                        echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
+//                    }
+//
+//                    echo "</ul>";
+//                    echo "<br>";
+//
+//                endforeach;
+        $user = new User($_SESSION['name'], $_SESSION['login'], $_SESSION['pass'],$_SESSION['id']);
+        $user->showBuyedKeys($DB);
 
                 echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
                       <span style='display:inline-block'>%</span><div class='center-button'>
