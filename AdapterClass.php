@@ -30,7 +30,7 @@
 
     }
 
-    Class Adapter extends dbConnector {
+    Class db extends dbConnector {
         private $db;
 
         public function __construct() {
