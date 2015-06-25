@@ -62,7 +62,7 @@
 
 
 
-    include_once('pdo.php');
+
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
         if(isUserExist(get_db_connect(), $_POST['email'])) {
             echo "<center>User is already exist!<br><br></center>";
