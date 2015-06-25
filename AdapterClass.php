@@ -20,6 +20,7 @@
         }
 
         public function fetcher($query) {
+            $answer = [];
             while ($row = $query->fetch(PDO::FETCH_ASSOC)){
                 $answer[] = $row['gen_key'];
             }
@@ -80,16 +81,17 @@
         }
 
         public function getAllBuyedKeys($value_user_ID) {
-
+            $keys = null;
             $arrayOfParams =['user_ID' => $value_user_ID];
             $query = $this->queryExecute($this->db,'SELECT gen_key FROM generated_keys WHERE user_ID = :user_ID',$arrayOfParams);
 
-            $keys_body = $this->fetcher($query);
-            if(isset($keys_body)) {
-                foreach ($keys_body as $key => $value) {
-                    $keys[$this->getproductName($value[0])][] = $value;
+                $keys_body = $this->fetcher($query);
+                if(isset($keys_body)) {
+                    foreach ($keys_body as $key => $value) {
+                        $keys[$this->getproductName($value[0])][] = $value;
+                    }
                 }
-            }
+
             return $keys;
         }
 
@@ -146,35 +148,23 @@
             return $email['email'];
         }
 
-        public function getLastKeys($count) {
-            $arrayOfParams =['count' => $count];
-            $query = $this->queryExecute($this->db,'SELECT * FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
-
-            $keys=$query->fetchAll(PDO::FETCH_ASSOC);
-            return $keys;
-        }
 
         public function getGeneratedKeysId($prod_id, $count) {
             include_once('generator.php');
+            $answer = [];
             for($i=0; $i<$count; $i++) {
                 $key = generate_key($prod_id);
+                $arrayOfParams = ['key' => $key];
+                $this->queryExecute($this->db, 'INSERT INTO generated_keys (gen_key) VALUES (:key)', $arrayOfParams);
 
-                $arrayOfParams =['key' => $key];
-                $this->queryExecute($this->db,'INSERT INTO generated_keys (gen_key) VALUES (:key)',$arrayOfParams);
-
+                $query = $this->queryExecute($this->db, 'SELECT id FROM generated_keys WHERE gen_key = :key', $arrayOfParams);
+                $idFromNewKey = ($query->fetch(PDO::FETCH_ASSOC));
+                $answer[$idFromNewKey['id']] = $key;
             }
-            $arrayOfParams =['count' => $count];
-            $query = $this->queryExecute($this->db,'SELECT id, gen_key FROM generated_keys ORDER BY id DESC LIMIT :count',$arrayOfParams);
+            return $answer;
 
-
-            $key_id = $query->fetchAll(PDO::FETCH_ASSOC);
-            $key_ids = array();
-            foreach($key_id as $key => $value) {
-                $key_ids[$value['id']] = $value['gen_key'];
-            }
-
-            return $key_ids;
         }
+
 
 
         public function deleteKey($key_id) {
@@ -258,5 +248,3 @@
         }
 
     }
-
-
