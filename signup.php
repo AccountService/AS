@@ -56,28 +56,28 @@
 
     $regInfo = json_encode($regInfo);
     //var_dump($regInfo);*/
+
+
+
+
+
     $DB = new db();
 
-
-
-
-
-
     if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
-        if(isUserExist(get_db_connect(), $_POST['email'])) {
+        if($DB->isUserExist($_POST['email'])) {
             echo "<center>User is already exist!<br><br></center>";
-        } else {
-            if ($_POST['pass'] == $_POST['pass_again']) {
-                $DB->registration($_POST['name'], $_POST['email'], $_POST['pass']);
-                $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email'], 'id' => $DB->getUserId($_POST['email']));
-                $regInfo = json_encode($regInfo);
-                include('sendreginfo.php');
-                echo( $DB->sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php"));
-                echo "<script>location.href = 'index.php';</script>";
-            } else {
-                echo "<center><h2>Passwords do not match!<br><br></h2></center>";
+        }   else {
+                if ($_POST['pass'] == $_POST['pass_again']) {
+                    $DB->registration($_POST['name'], $_POST['email'], $_POST['pass']);
+                    $regInfo = array('name' => $_POST['name'], 'email' => $_POST['email'], 'id' => $DB->getUserId($_POST['email']));
+                    $regInfo = json_encode($regInfo);
+                    include('sendreginfo.php');
+                    echo( $DB->sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php"));
+                    echo "<script>location.href = 'index.php';</script>";
+                } else {
+                    echo "<center><h2>Passwords do not match!<br><br></h2></center>";
+                }
             }
-        }
 
     }
     ?>
