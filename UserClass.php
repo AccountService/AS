@@ -35,7 +35,7 @@
 
             $keys = $DB->getAllBuyedKeys($this->id);
 
-            if($keys !== null){
+            if($keys != null){
             foreach ($keys as $key => $value) :
                 echo  "<h5>".$key.":"."</h5>" ;
                 echo "<ul>";
@@ -49,6 +49,9 @@
                 echo "<br>";
 
             endforeach;
+                return true;
+            } else {
+                return false;
             }
         }
 
