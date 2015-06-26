@@ -1,3 +1,4 @@
+
 <?php
     class User {
         private $name;
@@ -36,19 +37,19 @@
             $keys = $DB->getAllBuyedKeys($this->id);
 
             if($keys !== null){
-            foreach ($keys as $key => $value) :
-                echo  "<h5>".$key.":"."</h5>" ;
-                echo "<ul>";
+                foreach ($keys as $key => $value) :
+                    echo  "<h5>".$key.":"."</h5>" ;
+                    echo "<ul>";
 
-                foreach($value as $key) {
-                    $id = $DB->getIDbyKey($key);
-                    echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
-                }
+                    foreach($value as $key) {
+                        $id = $DB->getIDbyKey($key);
+                        echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
+                    }
 
-                echo "</ul>";
-                echo "<br>";
+                    echo "</ul>";
+                    echo "<br>";
 
-            endforeach;
+                endforeach;
             }
         }
 

@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Key' => $baseDir . '/Classes/KeyClass.php',
+    'Key' => $baseDir . '/Classes/Key.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
-    'User' => $baseDir . '/Classes/UserClass.php',
-    'db' => $baseDir . '/Classes/AdapterClass.php',
-    'dbConnector' => $baseDir . '/Classes/AdapterClass.php',
+    'User' => $baseDir . '/Classes/User.php',
+    'db' => $baseDir . '/Classes/db.php',
+    'dbConnector' => $baseDir . '/Classes/dbConnector.php',
 );
