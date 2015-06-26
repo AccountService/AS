@@ -8,8 +8,7 @@
 
 
     <?php
-    include_once('AdapterClass.php');
-    include_once('UserClass.php');
+    $loader = require_once __DIR__.'/vendor/autoload.php';
 
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
