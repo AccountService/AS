@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <?php
-    include_once('AdapterClass.php');
-    include_once('UserClass.php');
-
+   // include_once('AdapterClass.php');
+   // include_once('UserClass.php');
+    $loader = require_once __DIR__.'/vendor/autoload.php';
     $DB = new db();
 
     $jsondata = file_get_contents("products.json");
@@ -23,6 +23,7 @@
         document.location.href = "index.php";
         </script>';
     }
+    require 'vendor/autoload.php';
     ?>
 
 </head>
