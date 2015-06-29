@@ -151,7 +151,9 @@
 //
 //                endforeach;
         $user = new User($_SESSION['name'], $_SESSION['login'], $_SESSION['pass'],$_SESSION['id']);
-        if($user->showBuyedKeys($DB)) {
+
+        if($user->keyExist($DB)) {
+            $user->showBuyedKeys($DB);
             echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
                       <span style='display:inline-block'>%</span><div class='center-button'>
                       <button class='btn waves-effect waves-light floating' type='submit'>Cancel request</button></div>";

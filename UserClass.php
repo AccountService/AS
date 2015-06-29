@@ -31,16 +31,23 @@
             $this->id = $id;
         }
 
-        public function showBuyedKeys($DB) {
-
+        public function keyExist($DB) {
             $keys = $DB->getAllBuyedKeys($this->id);
 
-            if($keys != null){
-            foreach ($keys as $key => $value) :
-                echo  "<h5>".$key.":"."</h5>" ;
+            if($keys != null) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function showBuyedKeys($DB) {
+            $keys = $DB->getAllBuyedKeys($this->id);
+            foreach ($keys as $key => $value) {
+                echo "<h5>" . $key . ":" . "</h5>";
                 echo "<ul>";
 
-                foreach($value as $key) {
+                foreach ($value as $key) {
                     $id = $DB->getIDbyKey($key);
                     echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
                 }
@@ -48,11 +55,8 @@
                 echo "</ul>";
                 echo "<br>";
 
-            endforeach;
-                return true;
-            } else {
-                return false;
             }
+
         }
 
     }
