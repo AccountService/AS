@@ -1,3 +1,4 @@
+
 <?php
     class User {
         private $name;
@@ -51,12 +52,11 @@
                     $id = $DB->getIDbyKey($key);
                     echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
                 }
-
                 echo "</ul>";
                 echo "<br>";
 
             }
 
         }
-
     }
+

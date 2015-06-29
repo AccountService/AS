@@ -2,7 +2,7 @@
 
 session_start();
 
-include('AdapterClass.php');
+$loader = require_once __DIR__.'/vendor/autoload.php';
 $DB = new db();
 
 $returnedInfo = array();

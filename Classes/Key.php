@@ -1,15 +1,15 @@
 <?php
-    class Key
-    {
+class Key
+{
 
-        public static function generate($prod_id)
-        {                                // $id ---> product id
-            $randomv = rand() . rand() . rand();
+    public static function generate($prod_id)
+    {                                // $id ---> product id
+        $randomv = rand() . rand() . rand();
 
-            $new_key = $prod_id . '_' . hash('sha256', $randomv);
-            $new_key .= microtime(true);
-            return $new_key;
-        }
+        $new_key = $prod_id . '_' . hash('sha256', $randomv);
+        $new_key .= microtime(true);
+        return $new_key;
+    }
 
 
 //        private function createkeys($number,$id) {
@@ -25,4 +25,4 @@
 //            return $array;
 //        }
 
-    }
+}

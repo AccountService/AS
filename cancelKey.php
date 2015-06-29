@@ -1,9 +1,9 @@
 <?php
-    include_once('pdo.php');
+    $loader = require_once __DIR__.'/vendor/autoload.php';
     $arr = json_decode($_POST['refunds'],true);
-
+    $DB = new db();
     foreach($arr as $value) {
-        deleteKey(get_db_connect(),$value);
+        $DB->deleteKey($value);
     }
 
 ?>
