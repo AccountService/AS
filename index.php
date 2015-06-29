@@ -6,18 +6,22 @@
     <link rel="stylesheet" href="css/style.css">
 
     <?php
-   // include_once('AdapterClass.php');
-   // include_once('UserClass.php');
     $loader = require_once __DIR__.'/vendor/autoload.php';
+
+    use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Session\Session;
+
+    $session = new Session();
+    $request = Request::createFromGlobals();
+
     $DB = new db();
 
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
 
-    session_start();
-
-    if(isset($_GET['exit'])) {
-        session_destroy();
+    $session->start();
+    if($request->query->has('exit')) {
+        $session->invalidate();
 
         echo '<script>
         document.location.href = "index.php";
@@ -43,7 +47,7 @@
 
         <section class="menu menu--off">
             <?php
-            if(isset($_SESSION['name'])) { ?>
+            if($session->has('name')) { ?>
                 <div><a href="index.php">Products</a></div>
                 <div><a href="index.php?keys">My keys</a></div>
                 <div><a href="index.php?exit">Exit</a></div>
@@ -61,8 +65,9 @@
     <div class="container-form">
 
     <?php
-    if(isset($_SESSION['name'])) {
-        $name = $_SESSION['name'];
+    if($session->has('name')) {
+        $name = $session->get('name');
+
         echo "<h2>Hello, $name</h2>";
     } else {?>
         <form method="POST">
@@ -99,14 +104,24 @@
 
     <div class="container-main">
     <?php
-    if(isset($_POST['login']) && isset($_POST['pass'])) {
-        if($DB->isAuthorize($_POST['login'], $_POST['pass'])) {
+    //if(isset($_POST['login']) && isset($_POST['pass'])) {
+    if($request->request->has('login') && $request->request->has('pass')) {
+        if($DB->isAuthorize($request->request->get('login'), $request->request->get('pass'))) {
 
-            $_SESSION['logged']=true;
-            $_SESSION['login'] = $_POST['login'];
-            $_SESSION['pass'] = $_POST['pass'];
-            $_SESSION['id'] = $DB->getUserId($_POST['login']);
-            $_SESSION['name'] = $DB->getUserName($_SESSION['id']);
+            //$_SESSION['logged']=true;
+            $session->set('logged', true);
+
+            //$_SESSION['login'] = ,$_POST['login'];
+            $session->set('login', $request->request->get('login'));
+
+            //$_SESSION['pass'] = $_POST['pass'];
+            $session->set('pass', $request->request->get('pass'));
+
+            //$_SESSION['id'] = $DB->getUserId($_POST['login']);
+            $session->set('id', $DB->getUserId($request->request->get('login')));
+
+            //$_SESSION['name'] = $DB->getUserName($_SESSION['id']);
+            $session->set('name', $DB->getUserName($session->get('id')));
 
             echo '<script>
             document.location.href = "index.php";
@@ -120,7 +135,7 @@
     ?>
     <center>
     <?php
-    if(isset($_GET['keys'])) {
+    if($request->query->has('keys')) {
         echo '
             <form action="" method="post">
 
@@ -133,24 +148,9 @@
 
             </form>';
 
-        echo '
-            <form action="cancelRequest.php" method="post">';
-//                $keys = $DB->getAllBuyedKeys($_SESSION['id']);
-//
-//                foreach ($keys as $key => $value) :
-//                    echo  "<h5>".$key.":"."</h5>" ;
-//                    echo "<ul>";
-//
-//                    foreach($value as $key) {
-//                        $id = $DB->getIDbyKey($key);
-//                        echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
-//                    }
-//
-//                    echo "</ul>";
-//                    echo "<br>";
-//
-//                endforeach;
-        $user = new User($_SESSION['name'], $_SESSION['login'], $_SESSION['pass'],$_SESSION['id']);
+        echo '<form action="cancelRequest.php" method="post">';
+
+        $user = new User($session->get('name'), $session->get('login'), $session->get('pass'),$session->get('id'));
 
         if($user->keyExist($DB)) {
             $user->showBuyedKeys($DB);
@@ -163,9 +163,9 @@
         <div>
 
             <?php
-            if(isset($_POST['key'])) {
-                $DB->keyValidation($_POST['key']);
-                $DB->connectKeyToUser($_POST['key'], $_SESSION['id']);
+            if($request->request->has('key')) {
+                $DB->keyValidation($request->request->get('key'));
+                $DB->connectKeyToUser($request->request->get('key'), $session->get('id'));
                 header('Location: index.php?keys');
             }
             ?>

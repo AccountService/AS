@@ -6,21 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8" />
     <link rel="stylesheet" href="css/style.css">
 
-
     <?php
     $loader = require_once __DIR__.'/vendor/autoload.php';
+    use Symfony\Component\HttpFoundation\Request;
+    $request = Request::createFromGlobals();
 
     $jsondata = file_get_contents("products.json");
     $json = json_decode($jsondata, true);
-    session_start();
 
     ?>
-
-
-
-
-
-
 
 </head>
 
@@ -60,23 +54,23 @@
     $regInfo = json_encode($regInfo);
     //var_dump($regInfo);*/
 
-
-
-
-
     $DB = new db();
 
-    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['pass_again'])) {
-        $user = new User($_POST['name'],  $_POST['email'], $_POST['pass']);
+    if(($request->request->has('name') && $request->request->has('email')) &&
+       ($request->request->has('pass') && $request->request->has('pass_again'))) {
+
+        $user = new User($request->request->get('name'), $request->request->get('email'), $request->request->get('pass'));
 
         if($DB->isUserExist($user->getEmail())) {
             echo "<center>User is already exist!<br><br></center>";
         }   else {
-                if ($_POST['pass'] == $_POST['pass_again']) {
+                if ($request->request->get('pass') == $request->request('pass_again')) {
                     $DB->registration($user->getName(), $user->getEmail(), $user->getPassword());
+
                     $user->setID($DB->getUserId($user->getEmail()));
                     $regInfo = array('name' => $user->getName(), 'email' => $user->getEmail(), 'id' => $user->getID());
                     $regInfo = json_encode($regInfo);
+
                     $DB->sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php");
 
                     echo "<script>location.href = 'index.php';</script>";
@@ -88,11 +82,8 @@
     }
     ?>
 
-
     <center>
         <form method="post">
-
-
             <div class="group-reg left-move">
                 <input type="text" class="reg-input inputWidth" name="name" required  style="width: 400px; padding: 2px; border: 1px outset gray;">
                 <span class="highlight"></span>
@@ -130,26 +121,7 @@
         </form>
     </center>
 
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="js/index.js"></script>
 
@@ -158,54 +130,5 @@
 <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
 
 
-
-
-
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
