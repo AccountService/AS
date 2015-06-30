@@ -20,7 +20,7 @@
     $json = json_decode($jsondata, true);
 
     $session->start();
-    if($request->query->has('exit')) {
+    if($request->query->has('exit')) { //if(isset($_GET['exit']))
         $session->invalidate();
 
         echo '<script>
@@ -52,7 +52,7 @@
                 <div><a href="index.php?keys">My keys</a></div>
                 <div><a href="index.php?exit">Exit</a></div>
 
-            <?php
+            <?php//
             } else { ?>
                 <div><a href="index.php">Products</a></div>
                 <div><a href="signup.php">Registration</a></div>
@@ -105,7 +105,7 @@
     <div class="container-main">
     <?php
     //if(isset($_POST['login']) && isset($_POST['pass'])) {
-    if($request->request->has('login') && $request->request->has('pass')) {
+    if($request->get('login') && $request->get('pass')) {
         if($DB->isAuthorize($request->request->get('login'), $request->request->get('pass'))) {
 
             //$_SESSION['logged']=true;

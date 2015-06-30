@@ -64,7 +64,7 @@
         if($DB->isUserExist($user->getEmail())) {
             echo "<center>User is already exist!<br><br></center>";
         }   else {
-                if ($request->request->get('pass') == $request->request('pass_again')) {
+                if ($request->request->get('pass') == $request->request->get('pass_again')) {
                     $DB->registration($user->getName(), $user->getEmail(), $user->getPassword());
 
                     $user->setID($DB->getUserId($user->getEmail()));
