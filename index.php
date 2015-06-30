@@ -21,7 +21,6 @@
 
     $session->start();
     if($request->query->has('exit')) {
-       // var_dump($re)
         $session->invalidate();
 
         echo '<script>
