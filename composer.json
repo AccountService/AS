@@ -1,12 +1,12 @@
 {
-  "name": "AccountService/AS",
+  "name": "rosh/oop",
   "description": "description_text",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
     {
-      "name": "AS",
-      "email": "AccountService@github.com"
+      "name": "rosh",
+      "email": "rosh@zeoalliance.com"
     }
   ],
   "require": {
@@ -14,7 +14,10 @@
     "symfony/routing": "2.7.*"
   },
   "autoload": {
-      "classmap":["Classes/"]
-  }
+    "psr-0": {
+      "": "src/"
 
+    },
+    "classmap":["Classes/"]
+  }
 }
