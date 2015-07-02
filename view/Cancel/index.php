@@ -69,11 +69,11 @@
 
         echo "<h2>Cancel Request</h2>";
     }   else {
-            echo '<script>
+        echo '<script>
                    document.location.href = "/";
                   </script>';
 
-             }
+    }
     ?>
 
 </div>
@@ -81,7 +81,24 @@
 <br>
 
 <div class="container-main">
+<?php
+    $returnedInfo = array();
+    foreach($request->request as $key => $value){
+    array_push($returnedInfo, $value);
+    }
+    $amount = array_pop($returnedInfo);
+    $cancel_info = array (
+    'email' => $DB->getUserEmail($session->get('id')),
+    'key_id' => $returnedInfo,
+    'amount' => $amount
+    );
+    $info = json_encode($cancel_info);
+     $info;
+
+    $answer = $DB->sendData('cancel_info', $info, '10.55.33.27/dev/addRefund.php');?>
+
     <center><h1>
+
             Your request has been sent.<br>
             <a href="/">Back to HOME</a></h1>
     </center>
