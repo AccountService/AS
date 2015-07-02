@@ -20,9 +20,13 @@ class Index {
     {
         include_once('view/Discard/index.php');
     }
-    private function getcancelPage()
+    private function getCancelPage()
     {
         include_once('view/Cancel/index.php');
+    }
+    private function getBuyPage()
+    {
+        include_once('view/Buy/index.php');
     }
     public function indexAction(){
         return new \Symfony\Component\HttpFoundation\Response($this->getIndexPage());
@@ -35,10 +39,13 @@ class Index {
     }
 
     public function cancelAction(){
-        return new \Symfony\Component\HttpFoundation\Response($this->getcancelPage());
+        return new \Symfony\Component\HttpFoundation\Response($this->getCancelPage());
     }
     public function discardAction(){
         return new \Symfony\Component\HttpFoundation\Response($this->discardAct());
+    }
+    public function buyAction(){
+        return new \Symfony\Component\HttpFoundation\Response($this->getBuyPage());
     }
 
 

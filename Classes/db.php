@@ -120,7 +120,7 @@ Class db extends dbConnector {
 
 
     public function getGeneratedKeysId($prod_id, $count) {
-        include_once('KeyClass.php');
+        include_once('Key.php');
         $answer = [];
         for($i=0; $i<$count; $i++) {
             $key = Key::generate($prod_id);

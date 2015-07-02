@@ -11,4 +11,5 @@ return array(
     'User' => $baseDir . '/Classes/User.php',
     'db' => $baseDir . '/Classes/db.php',
     'dbConnector' => $baseDir . '/Classes/dbConnector.php',
+    'signurl' => $baseDir . '/Classes/signurl.php',
 );

@@ -98,69 +98,19 @@ if($request->query->has('exit')) {
 <br>
 
 <div class="container-main">
-    <?php
-    //if(isset($_POST['login']) && isset($_POST['pass'])) {
-    if($request->request->has('login') && $request->request->has('pass')) {
-        if($DB->isAuthorize($request->request->get('login'), $request->request->get('pass'))) {
-
-            //$_SESSION['logged']=true;
-            $session->set('logged', true);
-
-            //$_SESSION['login'] = ,$_POST['login'];
-            $session->set('login', $request->request->get('login'));
-
-            //$_SESSION['pass'] = $_POST['pass'];
-            $session->set('pass', $request->request->get('pass'));
-
-            //$_SESSION['id'] = $DB->getUserId($_POST['login']);
-            $session->set('id', $DB->getUserId($request->request->get('login')));
-
-            //$_SESSION['name'] = $DB->getUserName($_SESSION['id']);
-            $session->set('name', $DB->getUserName($session->get('id')));
-
-            echo '<script>
-            document.location.href = "../../";
-            </script>';
-
-        } else {
-            echo "<center><h3>Wrong email or password!</h3><br><br></center>";
-        }
-
-    }
-    ?>
-    <center>
-        <?php
-
-
-            $i = 0;
-            foreach ($json['products'] as $key => $value) : ?>
-                <form action="/buy" method="get" class="form-selector">
-                    <input type="hidden" name="id" value="<?=$value['id']?>">
-                    <div class="dialog" >
-                        <div class="content">
-                            <div class="title"><?=$value['name']?></div><br>
-                            <div><?=$value['description']?></div>
-                            Count:
-                        </div>
-                        <input type="text" style="width:100px; margin-top:-70px; text-align:center" value="1" name="count">
-                        <button class="btn waves-effect waves-light floating" type="submit">$<?=(float)$value['price']?>
-                        </button>
-
-                        <button class="btn waves-effect waves-light" type="submit">Buy
-                        </button>
-
-                    </div>
-                </form>
-
-                <?php
-                $i++;
-                if ($i%2==0) {echo '<br><br><br>';}
-
-            endforeach;
-        ?>
-
-    </center>
-
+   <?php
+   $id = $request->query->get('id');
+   $count = $request->query->get('count');
+   $url = "/product.php?id=$id&count=$count";
+   //echo $url;
+   $host = '10.55.33.36';
+   $card = '9999999999999999';
+   $password = 'password';
+   $buyer = new signurl();
+   $buy_url = $buyer->UrlSigner($host,$url,$card,$password);
+   echo "<center><h1><a href='$buy_url'>press to continue</a></h1></center>";
+   header("location:http://$buy_url")
+   ?>
 </div>
 
 <footer>
