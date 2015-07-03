@@ -38,8 +38,8 @@ Class db extends dbConnector {
 
     public function markKey($value_key) {
 
-        $arrayOfParams =['key' => $value_key];
-        $this->queryExecute($this->db,'UPDATE generated_keys SET is_marked = 1 WHERE gen_key = :key',$arrayOfParams);
+        $arrayOfParams =['id' => $value_key];
+        $this->queryExecute($this->db,'UPDATE generated_keys SET is_marked = 1 WHERE id = :id',$arrayOfParams);
 
     }
 
