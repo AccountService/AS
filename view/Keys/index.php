@@ -169,8 +169,7 @@
                     $address = "10.55.33.27/dev/addUser.php";
                     $validation_info = array("key_id" => $key_id, "user_mail" => $user_mail);
                     $validation_info = json_encode($validation_info);
-                    echo $DB->sendData('validation_info', $validation_info, $address);
-                    exit();
+                    $DB->sendData('validation_info', $validation_info, $address);
                     echo '<script>
                           document.location.href = "/keys";
             </script>';
