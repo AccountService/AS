@@ -25,16 +25,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/MarkKey/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.12698413" vertical-offset="0" max-vertical-offset="567">
               <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/Buy/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.25" vertical-offset="1395" max-vertical-offset="2040">
+              <caret line="111" column="27" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+              <folding>
+                <element signature="e#65#110#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#section#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <marker date="1435856149789" expanded="true" signature="438:494" placeholder="..." />
+                <marker date="1435856149789" expanded="true" signature="2796:2985" placeholder="..." />
+                <marker date="1435856149789" expanded="true" signature="2872:2985" placeholder="..." />
+                <marker date="1435856149789" expanded="true" signature="2894:2971" placeholder="..." />
+              </folding>
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classes/db.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,10 +77,19 @@
                 <marker date="1435589041019" expanded="true" signature="4502:4552" placeholder="SELECT id FR..generated_keys..." />
                 <marker date="1435589041019" expanded="true" signature="4855:4898" placeholder="DELETE FROM ..." />
               </folding>
+=======
+      <file leaf-file-name="products.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/products.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="583">
+              <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+              <folding />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,30 +98,87 @@
               <folding>
                 <element signature="e#37#82#0#PHP" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="take.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/take.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="get_products.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/get_products.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="195">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/without_routing/products.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-14.333333" vertical-offset="441" max-vertical-offset="1008">
               <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+=======
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="975">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="40" />
+              <folding>
+                <element signature="e#37#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signurl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/signurl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.458333" vertical-offset="259" max-vertical-offset="855">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="buy.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/without_routing/buy.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="396">
               <caret line="16" column="7" selection-start-line="3" selection-start-column="0" selection-end-line="16" selection-end-column="7" />
+=======
+      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="195">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/Keys/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,7 +192,50 @@
                 <marker date="1435847758934" expanded="false" signature="4631:4651" placeholder="..." />
                 <marker date="1435847758934" expanded="true" signature="4687:4807" placeholder="..." />
                 <marker date="1435847758934" expanded="true" signature="5147:5229" placeholder="..." />
+=======
+      <file leaf-file-name="autoload_classmap.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+=======
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/Keys/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7615894" vertical-offset="2877" max-vertical-offset="3654">
+              <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+              <folding>
+                <marker date="1435856490825" expanded="true" signature="3593:3657" placeholder="..." />
+                <marker date="1435856490825" expanded="true" signature="3870:4190" placeholder="..." />
+                <marker date="1435856490825" expanded="true" signature="4024:4169" placeholder="..." />
+                <marker date="1435856490825" expanded="true" signature="4531:4564" placeholder="..." />
+                <marker date="1435856490825" expanded="false" signature="4602:4622" placeholder="..." />
+                <marker date="1435856490825" expanded="true" signature="4658:4778" placeholder="..." />
+                <marker date="1435856490825" expanded="true" signature="5589:5641" placeholder="..." />
+                <marker date="1435856490825" expanded="true" signature="5589:5671" placeholder="..." />
               </folding>
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Classes/db.php">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="465">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <marker date="1435849354433" expanded="true" signature="318:377" placeholder="..." />
+                <marker date="1435849354433" expanded="true" signature="408:491" placeholder="..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
+              </folding>
+=======
+            <state vertical-scroll-proportion="33.88889" vertical-offset="2751" max-vertical-offset="4050">
+              <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+              <folding />
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
             </state>
           </provider>
         </entry>
@@ -129,7 +257,6 @@
         <option value="$PROJECT_DIR$/routing/keys.php" />
         <option value="$PROJECT_DIR$/signup.php" />
         <option value="$PROJECT_DIR$/routing/css/style.css" />
-        <option value="$PROJECT_DIR$/get_products.php" />
         <option value="$PROJECT_DIR$/routing/view/Cancell/cancel.php" />
         <option value="$PROJECT_DIR$/routing/view/Reg/index.php" />
         <option value="$PROJECT_DIR$/routing/view/Index/index.php" />
@@ -138,6 +265,7 @@
         <option value="$PROJECT_DIR$/routing/index.php" />
         <option value="$PROJECT_DIR$/routing/src/Index.php" />
         <option value="$PROJECT_DIR$/routing/view/Discard/index.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/view/Keys/index.php" />
         <option value="$PROJECT_DIR$/without_routing/index.php" />
         <option value="$PROJECT_DIR$/without_routing/Classes/db.php" />
@@ -147,6 +275,25 @@
         <option value="$PROJECT_DIR$/src/Index.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/MarkKey/index.php" />
+=======
+        <option value="$PROJECT_DIR$/view/Cancel/index.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/view/Index/index.php" />
+        <option value="$PROJECT_DIR$/src/Index.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+        <option value="$PROJECT_DIR$/view/Take/index.php" />
+        <option value="$PROJECT_DIR$/Classes/db.php" />
+        <option value="$PROJECT_DIR$/Classes/signurl.php" />
+        <option value="$PROJECT_DIR$/take.php" />
+        <option value="$PROJECT_DIR$/view/Buy/index.php" />
+        <option value="$PROJECT_DIR$/get_products.php" />
+        <option value="$PROJECT_DIR$/products.json" />
+=======
+        <option value="$PROJECT_DIR$/Classes/db.php" />
+        <option value="$PROJECT_DIR$/view/Keys/index.php" />
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
       </list>
     </option>
   </component>
@@ -157,8 +304,13 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
+<<<<<<< HEAD
     <option name="width" value="1615" />
     <option name="height" value="1026" />
+=======
+    <option name="width" value="1535" />
+    <option name="height" value="876" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -202,6 +354,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="AS" />
@@ -226,11 +382,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="without_routing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Classes" />
+=======
+              <option name="myItemId" value="src" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,10 +404,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+=======
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
         </subPane>
       </pane>
     </panes>
@@ -261,10 +430,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Classes" />
       <recent name="$PROJECT_DIR$/routing/style" />
       <recent name="$PROJECT_DIR$/Быстрый доступ к версии без роутинга" />
       <recent name="$PROJECT_DIR$/routing/view/Keys" />
-      <recent name="$PROJECT_DIR$/routing/view/Index" />
     </key>
   </component>
   <component name="RunManager">
@@ -291,7 +460,17 @@
       <envs />
       <method />
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+=======
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
       <method />
     </configuration>
     <list size="0" />
@@ -330,6 +509,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="65" y="24" width="1615" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -340,11 +520,30 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26258764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32953367" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32948717" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25529101" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -375,6 +574,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Reg/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="2664">
@@ -439,10 +639,20 @@
             <marker date="1435847758934" expanded="false" signature="4631:4651" placeholder="..." />
             <marker date="1435847758934" expanded="true" signature="4687:4807" placeholder="..." />
             <marker date="1435847758934" expanded="true" signature="5147:5229" placeholder="..." />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/view/Reg/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="2220">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#1231#1439#0#PHP" expanded="true" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Cancel/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1107" max-vertical-offset="1980">
@@ -450,10 +660,24 @@
           <folding>
             <element signature="e#285#330#0#PHP" expanded="false" />
             <marker date="1435847121722" expanded="true" signature="-1:-1" placeholder="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/view/Index/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="2805">
+          <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+          <folding>
+            <element signature="e#65#110#0#PHP" expanded="true" />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Discard/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="558">
@@ -665,9 +889,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="938">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="750">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="960">
+          <caret line="19" column="97" selection-start-line="19" selection-start-column="97" selection-end-line="19" selection-end-column="97" />
+          <folding>
+            <element signature="e#37#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Keys/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1994" max-vertical-offset="2970">
+          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
+          <folding>
+            <element signature="e#283#328#0#PHP" expanded="true" />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Cancel/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1650">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#285#330#0#PHP" expanded="true" />
+            <marker date="1435849578513" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+    <entry file="file://$PROJECT_DIR$/view/Discard/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6137339" vertical-offset="92" max-vertical-offset="558">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <marker date="1435852351293" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435852351293" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="420">
@@ -689,26 +972,63 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Index/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1602" max-vertical-offset="3366">
           <caret line="89" column="51" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
           <folding>
             <element signature="e#65#110#0#PHP" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/view/Reg/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.0" vertical-offset="630" max-vertical-offset="2220">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#1231#1439#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/Keys/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.416667" vertical-offset="1994" max-vertical-offset="2970">
+          <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
+          <folding>
+            <element signature="e#283#328#0#PHP" expanded="true" />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="-1:-1" placeholder="..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Reg/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="2664">
           <caret line="26" column="35" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="35" />
           <folding>
             <element signature="e#1231#1439#0#PHP" expanded="false" />
+=======
+    <entry file="file://$PROJECT_DIR$/view/Cancel/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.333333" vertical-offset="586" max-vertical-offset="1905">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#285#330#0#PHP" expanded="true" />
+            <marker date="1435849578513" expanded="true" signature="-1:-1" placeholder="..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/without_routing/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.031746034" vertical-offset="2700" max-vertical-offset="3996">
@@ -728,19 +1048,39 @@
     <entry file="file://$PROJECT_DIR$/Classes/dbConnector.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
+=======
+    <entry file="file://$PROJECT_DIR$/Classes/dbConnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1020">
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/without_routing/Classes/dbConnector.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+=======
+    <entry file="file://$PROJECT_DIR$/Classes/Key.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Cancel/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1269841" vertical-offset="1107" max-vertical-offset="1980">
@@ -748,10 +1088,32 @@
           <folding>
             <element signature="e#285#330#0#PHP" expanded="false" />
             <marker date="1435847121722" expanded="true" signature="-1:-1" placeholder="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.75" vertical-offset="0" max-vertical-offset="855">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Index/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="1785" max-vertical-offset="2790">
+          <caret line="137" column="49" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="49" />
+          <folding>
+            <element signature="e#65#110#0#PHP" expanded="true" />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435850399045" expanded="true" signature="-1:-1" placeholder="..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Discard/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22222222" vertical-offset="0" max-vertical-offset="567">
@@ -759,10 +1121,34 @@
           <folding>
             <marker date="1435847121722" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1435847121722" expanded="true" signature="-1:-1" placeholder="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/Classes/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="1641" max-vertical-offset="3375">
+          <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+          <folding>
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT gen_k..generated_keys..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT gen_k..generated_keys..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT id FR..generated_keys..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="UPDATE gener..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="UPDATE gener..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT gen_k..generated_keys..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT email..users..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT user_..users..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT name ..users..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT email..users..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="SELECT id FR..generated_keys..." />
+            <marker date="1435852715957" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/view/Keys/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="3546">
@@ -775,26 +1161,54 @@
             <marker date="1435847758934" expanded="false" signature="4631:4651" placeholder="..." />
             <marker date="1435847758934" expanded="true" signature="4687:4807" placeholder="..." />
             <marker date="1435847758934" expanded="true" signature="5147:5229" placeholder="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/view/Discard/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="465">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <marker date="1435849354433" expanded="true" signature="318:377" placeholder="..." />
+            <marker date="1435849354433" expanded="true" signature="408:491" placeholder="..." />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/without_routing/buy.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="396">
           <caret line="16" column="7" selection-start-line="3" selection-start-column="0" selection-end-line="16" selection-end-column="7" />
           <folding />
+=======
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="975">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="40" />
+          <folding>
+            <element signature="e#37#82#0#PHP" expanded="true" />
+          </folding>
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Index.php">
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-14.333333" vertical-offset="441" max-vertical-offset="1008">
           <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+=======
+    <entry file="file://$PROJECT_DIR$/view/Reg/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2649007" vertical-offset="573" max-vertical-offset="2592">
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Classes/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="4050">
@@ -816,10 +1230,86 @@
             <marker date="1435589041019" expanded="true" signature="4378:4428" placeholder="INSERT INTO ..." />
             <marker date="1435589041019" expanded="true" signature="4502:4552" placeholder="SELECT id FR..generated_keys..." />
             <marker date="1435589041019" expanded="true" signature="4855:4898" placeholder="DELETE FROM ..." />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Classes/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="33.88889" vertical-offset="2751" max-vertical-offset="4050">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/take.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/without_routing/products.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Classes/signurl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.458333" vertical-offset="259" max-vertical-offset="855">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="596">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Buy/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="1395" max-vertical-offset="2040">
+          <caret line="111" column="27" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+          <folding>
+            <element signature="e#65#110#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#form#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <marker date="1435856149789" expanded="true" signature="438:494" placeholder="..." />
+            <marker date="1435856149789" expanded="true" signature="2796:2985" placeholder="..." />
+            <marker date="1435856149789" expanded="true" signature="2872:2985" placeholder="..." />
+            <marker date="1435856149789" expanded="true" signature="2894:2971" placeholder="..." />
+=======
+        <state vertical-scroll-proportion="0.7615894" vertical-offset="2877" max-vertical-offset="3654">
+          <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+          <folding>
+            <marker date="1435856490825" expanded="true" signature="3593:3657" placeholder="..." />
+            <marker date="1435856490825" expanded="true" signature="3870:4190" placeholder="..." />
+            <marker date="1435856490825" expanded="true" signature="4024:4169" placeholder="..." />
+            <marker date="1435856490825" expanded="true" signature="4531:4564" placeholder="..." />
+            <marker date="1435856490825" expanded="false" signature="4602:4622" placeholder="..." />
+            <marker date="1435856490825" expanded="true" signature="4658:4778" placeholder="..." />
+            <marker date="1435856490825" expanded="true" signature="5589:5641" placeholder="..." />
+            <marker date="1435856490825" expanded="true" signature="5589:5671" placeholder="..." />
+>>>>>>> 0c9bce5155ca37ec4af708c9b327648c970ff809
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.333334" vertical-offset="171" max-vertical-offset="1170">
@@ -827,6 +1317,13 @@
           <folding>
             <element signature="e#37#82#0#PHP" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/products.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="583">
+          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
         </state>
       </provider>
     </entry>

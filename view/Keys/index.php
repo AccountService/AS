@@ -164,12 +164,17 @@
                 if($request->request->has('key')) {
                     $DB->keyValidation($request->request->get('key'));
                     $DB->connectKeyToUser($request->request->get('key'), $session->get('id'));
+                    $user_mail = $user->getEmail();
+                    $key_id = $DB->getIDbyKey($request->request->get('key'));
+                    $address = "10.55.33.27/dev/addUser.php";
+                    $validation_info = array("key_id" => $key_id, "user_mail" => $user_mail);
+                    $validation_info = json_encode($validation_info);
+                    $DB->sendData('validation_info', $validation_info, $address);
                     echo '<script>
                           document.location.href = "/keys";
             </script>';
                 }
                 ?>
-
             </div>
 
     </center>

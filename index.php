@@ -18,8 +18,13 @@ $routes->add('keys', new Route('/keys', array('controller' => 'Index', 'action'=
 $routes->add('index', new Route('/', array('controller' => 'Index', 'action'=>'index')));
 $routes->add('reg', new Route('/reg', array('controller' => 'Index', 'action'=>'reg')));
 $routes->add('cancel', new Route('/cancel', array('controller' => 'Index', 'action'=>'cancel')));
+<<<<<<< HEAD
 $routes->add('mark', new Route('/mark', array('controller' => 'Index', 'action'=>'mark')));
 $routes->add('discard', new Route('/discard', array('controller' => 'Index', 'action'=>'discard')))
+=======
+$routes->add('discard', new Route('/discard', array('controller' => 'Index', 'action'=>'discard')));
+$routes->add('buy', new Route('/buy', array('controller' => 'Index', 'action'=>'buy')))
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
 
  ?>
     <html >

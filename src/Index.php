@@ -24,9 +24,15 @@ class Index {
     {
         include_once('view/Cancel/index.php');
     }
+<<<<<<< HEAD
     private function markKeyAct()
     {
         include_once('view/MarkKey/index.php');
+=======
+    private function getBuyPage()
+    {
+        include_once('view/Buy/index.php');
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
     }
     public function indexAction(){
         return new \Symfony\Component\HttpFoundation\Response($this->getIndexPage());
@@ -44,8 +50,15 @@ class Index {
     public function discardAction(){
         return new \Symfony\Component\HttpFoundation\Response($this->discardAct());
     }
+<<<<<<< HEAD
     public function markAction() {
         return new \Symfony\Component\HttpFoundation\Response($this->markKeyAct());
     }
+=======
+    public function buyAction(){
+        return new \Symfony\Component\HttpFoundation\Response($this->getBuyPage());
+    }
+
+>>>>>>> 738d7f9e10fd919f683190c36d474780a36c957c
 
 }
