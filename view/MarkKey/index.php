@@ -1,8 +1,8 @@
 <?php
 $loader = '/../../vendor/autoload.php';
-
+$DB = new db();
 if(isset($_POST['orders'])) {
-    $DB = new db();
+
     $info = json_decode($_POST['orders'], true);
 
     foreach ($info['keys'] as $key => $value) {
