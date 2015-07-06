@@ -166,10 +166,19 @@
                     $DB->connectKeyToUser($request->request->get('key'), $session->get('id'));
                     $user_mail = $user->getEmail();
                     $key_id = $DB->getIDbyKey($request->request->get('key'));
-                    $address = "10.55.33.27/dev/addUser.php";
                     $validation_info = array("key_id" => $key_id, "user_mail" => $user_mail);
                     $validation_info = json_encode($validation_info);
-                    $DB->sendData('validation_info', $validation_info, $address);
+
+
+                    $url = "dev/dev/addUser.php";
+                    $host = 'http//10.55.33.27/';
+                    $partner = 'CRM';
+                    $password = 'password';
+                    $signer = new signurl();
+                    $validate_url = $signer->UrlSigner($host,$url,$partner,$password);
+
+
+                    $DB->sendData('validation_info', $validation_info, $validate_url);
                     echo '<script>
                           document.location.href = "/keys";
             </script>';
