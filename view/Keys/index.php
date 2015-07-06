@@ -146,7 +146,7 @@
 
             </form>';
 
-            echo '<form action="http://10.55.33.27/dev/addRefund.php" method="post">';
+            echo '<form action="/cancel" method="post">';
 
             $user = new User($session->get('name'), $session->get('login'), $session->get('pass'),$session->get('id'));
 
@@ -170,7 +170,7 @@
                     $validation_info = json_encode($validation_info);
 
 
-                    $url = "dev/dev/addUser.php";
+                    $url = "dev/addUser.php";
                     $host = 'http//10.55.33.27/';
                     $partner = 'CRM';
                     $password = 'password';

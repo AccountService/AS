@@ -24,6 +24,7 @@ if($request->query->has('exit')) {
         </script>';
 }
 
+
 ?>
 
 
