@@ -84,7 +84,7 @@
 <?php
     $returnedInfo = array();
     foreach($request->request as $key => $value){
-    array_push($returnedInfo, $value);
+        array_push($returnedInfo, $value);
     }
     $amount = array_pop($returnedInfo);
     $cancel_info = array (
@@ -93,9 +93,15 @@
     'amount' => $amount
     );
     $info = json_encode($cancel_info);
-     $info;
 
-    $answer = $DB->sendData('cancel_info', $info, '10.55.33.27/dev/addRefund.php');?>
+    $url = "dev/addRefund.php";
+    $host = 'http//10.55.33.27/';
+    $partner = 'CRM';
+    $password = 'password';
+    $signer = new signurl();
+    $cancel_url = $signer->UrlSigner($host,$url,$partner,$password);
+
+    $answer = $DB->sendData('cancel_info', $info, $cancel_url);?>
 
     <center><h1>
 
