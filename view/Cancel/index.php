@@ -83,6 +83,11 @@
 <div class="container-main">
 <?php
     $returnedInfo = array();
+    if(count($request->request) < 2) {
+        echo '<script>
+                   document.location.href = "/keys";
+                  </script>';
+    }
     foreach($request->request as $key => $value){
         array_push($returnedInfo, $value);
     }
