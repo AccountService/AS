@@ -118,7 +118,7 @@ if($request->query->has('exit')) {
             </div>
 
             <div class="group-reg left-move">
-                <input type="text" class="reg-input inputWidth" name="email" required style="width: 400px; padding: 2px; border: 1px outset gray;">
+                <input type="email" class="reg-input inputWidth" name="email" required style="width: 400px; padding: 2px; border: 1px outset gray;">
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label class="Absolute-Center">e-mail:</label>
