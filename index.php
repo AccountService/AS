@@ -22,16 +22,15 @@ $routes->add('discard', new Route('/discard', array('controller' => 'Index', 'ac
 $routes->add('buy', new Route('/buy', array('controller' => 'Index', 'action'=>'buy')))
 
  ?>
-    <html >
-    <head>
+<html >
+<head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8" />
-        <link rel="stylesheet" href="style/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8" />
+    <link rel="stylesheet" href="style/css/style.css">
 
 
 
-    </head>
-
+</head>
 
 
 
