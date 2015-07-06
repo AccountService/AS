@@ -1,26 +1,36 @@
-
 <!DOCTYPE html>
-<html >
-<head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css">
 
-    <?php
-    $loader = '/../../vendor/autoload.php';
-    use Symfony\Component\HttpFoundation\Request;
-    $request = Request::createFromGlobals();
+<?php
+$loader = '/../../vendor/autoload.php';
 
-    $jsondata = file_get_contents("products.json");
-    $json = json_decode($jsondata, true);
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
-    ?>
+$session = new Session();
+$request = Request::createFromGlobals();
 
-</head>
+$DB = new db();
+
+$jsondata = file_get_contents("products.json");
+$json = json_decode($jsondata, true);
+
+$session->start();
+if($request->query->has('exit')) {
+    $session->invalidate();
+
+    echo '<script>
+        document.location.href = "/";
+        </script>';
+}
+
+?>
+
 
 <body>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="../../style/materialize/js/materialize.min.js"></script>
 
 <section class="wrapper" style="float:left;">
 
@@ -31,20 +41,29 @@
     </section>
 
     <section class="menu menu--off">
-        <div><a href="/">Products</a></div>
-        <div><a href="/reg">Registration</a></div>
+        <?php
+        if($session->has('name')) { ?>
+            <div><a href="/">Products</a></div>
+            <div><a href="/keys">My keys</a></div>
+            <div><a href="?exit">Exit</a></div>
+
+        <?php
+        } else { ?>
+            <div><a href="../../">Products</a></div>
+            <div><a href="/reg">Registration</a></div>
+        <?php
+        } ?>
     </section>
 
 </section>
-<div style="float:left;">
 
-</div>
 <div class="container-form">
 
-    <center><h2>REGISTRATION</h2></center>
+   <center><h1>REGISTRATION</h1></center>
 
 </div>
-<br>
+
+`
 <div class="container-main">
 
     <?php
@@ -128,23 +147,25 @@
         </form>
     </center>
 
-
 </div>
 
-<footer class ="center-button">
+<footer>
     <br><br>
-     2015 © Account Service
+    <center>2015 © Account Service </center>
     <br>
 </footer>
 
-
-
-<script src="js/index.js"></script>
+<script src="../../style/js/index.js"></script>
 
 <link rel="import" href="https://www.polymer-project.org/0.5/components/paper-ripple/paper-ripple.html">
 <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
 <link rel="import" href="http://www.polymer-project.org/components/font-roboto/roboto.html">
 
-
 </body>
 </html>
+
+
+
+
+
+
