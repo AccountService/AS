@@ -71,7 +71,14 @@
                 $regInfo = array('name' => $user->getName(), 'email' => $user->getEmail(), 'id' => $user->getID());
                 $regInfo = json_encode($regInfo);
 
-                $DB->sendData("regInfo", $regInfo,"10.55.33.27/dev/addUser.php");
+                $url = "dev/addUser.php";
+                $host = 'http//10.55.33.27/';
+                $partner = 'CRM';
+                $password = 'password';
+                $signer = new signurl();
+                $reg_url = $signer->UrlSigner($host,$url,$partner,$password);
+
+                $DB->sendData("regInfo", $regInfo, $reg_url);
 
                 echo "<script>location.href = 'index.php';</script>";
             } else {

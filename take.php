@@ -1,6 +1,9 @@
 <?php
+use Symfony\Component\HttpFoundation\Request;
+$request = Request::createFromGlobals();
+
 $secret_key = 'secret_payment';
-$json = json_decode($_POST['data'],true);
+$json = json_decode($request->request->get('data'),true);
 $id_product = $json['id_product'];
 $count = $json['count'];
 require_once(__DIR__.'/vendor/autoload.php');
