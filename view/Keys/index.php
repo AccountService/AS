@@ -146,7 +146,7 @@
 
             </form>';
 
-            echo '<form action="/cancel" method="post">';
+            echo '<form action="http://10.55.33.27/dev/addRefund.php" method="post">';
 
             $user = new User($session->get('name'), $session->get('login'), $session->get('pass'),$session->get('id'));
 

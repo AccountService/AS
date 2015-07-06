@@ -103,7 +103,7 @@ if($request->query->has('exit')) {
    $count = $request->query->get('count');
    $url = "/product.php?id=$id&count=$count";
    //echo $url;
-   $host = '10.55.33.36';
+   $host = '10.55.33.35';
    $card = '9999999999999999';
    $password = 'password';
    $buyer = new signurl();
