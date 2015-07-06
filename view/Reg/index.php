@@ -63,7 +63,7 @@ if($request->query->has('exit')) {
 
 </div>
 
-`
+
 <div class="container-main">
 
     <?php
