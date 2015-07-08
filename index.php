@@ -21,8 +21,8 @@ $routes->add('cancel', new Route('/cancel', array('controller' => 'Index', 'acti
 $routes->add('mark', new Route('/mark', array('controller' => 'Index', 'action'=>'mark')));
 $routes->add('discard', new Route('/discard', array('controller' => 'Index', 'action'=>'discard')));
 $routes->add('buy', new Route('/buy', array('controller' => 'Index', 'action'=>'buy')));
-$routes->add('get', new Route('/get', array('controller' => 'Index', 'action'=>'get')))
-
+$routes->add('get', new Route('/get', array('controller' => 'Index', 'action'=>'get')));
+$routes->add('take', new Route('/take', array('controller' => 'Index', 'action'=>'take')))
 
  ?>
 <html >

@@ -35,6 +35,11 @@ class Index {
         include_once('view/Buy/index.php');
 
     }
+    private function getTakePage()
+    {
+        include_once('view/Take/index.php');
+
+    }
 
     private function getGetPage()
     {
@@ -69,6 +74,9 @@ class Index {
         return new \Symfony\Component\HttpFoundation\Response($this->getGetPage());
     }
 
+    public function takeAction(){
+        return new \Symfony\Component\HttpFoundation\Response($this->getTakePage());
+    }
 
 
 }
