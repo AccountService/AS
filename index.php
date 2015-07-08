@@ -20,7 +20,8 @@ $routes->add('reg', new Route('/reg', array('controller' => 'Index', 'action'=>'
 $routes->add('cancel', new Route('/cancel', array('controller' => 'Index', 'action'=>'cancel')));
 $routes->add('mark', new Route('/mark', array('controller' => 'Index', 'action'=>'mark')));
 $routes->add('discard', new Route('/discard', array('controller' => 'Index', 'action'=>'discard')));
-$routes->add('buy', new Route('/buy', array('controller' => 'Index', 'action'=>'buy')))
+$routes->add('buy', new Route('/buy', array('controller' => 'Index', 'action'=>'buy')));
+$routes->add('get', new Route('/get', array('controller' => 'Index', 'action'=>'get')))
 
 
  ?>

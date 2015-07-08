@@ -35,6 +35,11 @@ class Index {
         include_once('view/Buy/index.php');
 
     }
+
+    private function getGetPage()
+    {
+        include_once('view/Get/index.php');
+    }
     public function indexAction(){
         return new \Symfony\Component\HttpFoundation\Response($this->getIndexPage());
     }
@@ -59,6 +64,9 @@ class Index {
 
     public function buyAction(){
         return new \Symfony\Component\HttpFoundation\Response($this->getBuyPage());
+    }
+    public function getAction(){
+        return new \Symfony\Component\HttpFoundation\Response($this->getGetPage());
     }
 
 
