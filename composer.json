@@ -11,7 +11,8 @@
   ],
   "require": {
     "symfony/http-foundation": "2.7.*",
-    "symfony/routing": "2.7.*"
+    "symfony/routing": "2.7.*",
+    "twig/twig": "1.*"
   },
   "autoload": {
     "psr-0": {
