@@ -46,11 +46,11 @@
             $keys = $DB->getAllBuyedKeys($this->id);
             foreach ($keys as $key => $value) {
                 echo "<h5>" . $key . ":" . "</h5>";
-                echo "<ul>";
+                echo "<ul class='collection'>";
 
                 foreach ($value as $key) {
                     $id = $DB->getIDbyKey($key);
-                    echo "<li>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
+                    echo "<li class='collection-item'>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
                 }
                 echo "</ul>";
                 echo "<br>";
