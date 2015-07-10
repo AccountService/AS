@@ -161,11 +161,11 @@ Class db extends dbConnector {
         }
     }
 
-    function sendData($key_info ,$info, $address, $secret_key = null){
+    function sendData($key_info ,$info, $address){
+
         $url = $address;
         $fields = array(
-            $key_info => $info,
-            'secret_key' => $secret_key
+            $key_info => $info
         );
 
         $fields_str = '';

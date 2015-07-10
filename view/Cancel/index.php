@@ -99,14 +99,14 @@
     );
     $info = json_encode($cancel_info);
 
-    $url = "dev/addRefund.php";
-    $host = 'http//10.55.33.27/';
+    $url = "/refund/add";
+    $host = 'http://10.55.33.27';
     $partner = 'CRM';
     $password = 'password';
     $signer = new signurl();
     $cancel_url = $signer->UrlSigner($host,$url,$partner,$password);
-
-    $answer = $DB->sendData('cancel_info', $info, $cancel_url);?>
+    $answer = $DB->sendData('cancel_info', $info, $cancel_url);
+?>
 
     <center><h1>
 

@@ -1,6 +1,6 @@
 <?php
 class signurl{
-  public  function UrlSigner($urlDomain, $urlPath, $partner, $key){
+    public static function urlSigner($urlDomain, $urlPath, $partner, $key){
         settype($urlDomain, 'String');
         settype($urlPath, 'String');
         settype($partner, 'String');
@@ -10,20 +10,21 @@ class signurl{
         $URLreturn = "";
         $URLtmp = "";
         $s = "";
-    // replace " " by "+"
+        // replace " " by "+"
         if (!(strpos($urlPath, '?'))) {
             $urlPath = $urlPath.'?';
         }
         $urlPath = str_replace(" ", "+", $urlPath);
-    // format URL
+        // format URL
         if (substr($urlPath, -1) == '?') {
-            $URLtmp = $urlPath.$URL_partner . "=" . $partner;
+            $URLtmp = $urlPath . $URL_partner . "=" . $partner;
         }
         else {
             $URLtmp = $urlPath . "&" . $URL_partner . "=" . $partner;
         }
-    // URL needed to create the tokken
-        $s = $urlPath . "&" . $URL_partner . "=" . $partner . $key;
+        // URL needed to create the tokken
+        //$s = $urlPath . "&" . $URL_partner . "=" . $partner . $key;
+        $s = $URLtmp . $key;
         $tokken = "";
         $tokken = base64_encode(pack('H*', md5($s)));
         $tokken = str_replace(array("+", "/", "="), array(".", "_", "-"), $tokken);
