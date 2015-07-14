@@ -99,7 +99,7 @@ if($request->query->has('exit')) {
                 $reg_url = $signer->UrlSigner($host,$url,$partner,$password);
 
                 $DB->sendData("regInfo", $regInfo, $reg_url);
-
+                echo '<script type="text/javascript">alert("Registration is successful!")</script>';
                 echo "<script>location.href = 'index.php';</script>";
             } else {
                 echo "<center><h2>Passwords do not match!<br><br></h2></center>";
