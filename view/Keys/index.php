@@ -171,8 +171,8 @@
                     $validation_info = json_encode($validation_info);
 
 
-                    $url = "dev/addUser.php";
-                    $host = 'http//10.55.33.27/';
+                    $url = "/user/activation";
+                    $host = '10.55.33.27';
                     $partner = 'CRM';
                     $password = 'password';
                     $signer = new signurl();
@@ -180,6 +180,7 @@
 
 
                     $DB->sendData('validation_info', $validation_info, $validate_url);
+
                     echo '<script>
                           document.location.href = "/keys";
             </script>';
