@@ -31,18 +31,21 @@ class signurl{
         $URLreturn = $urlDomain . $URLtmp . "&" . $URL_sig . "=" . $tokken;
         return $URLreturn;
     }
-  public  function CheckUrl($key) {
+
+    public static function checkUrl($key) {
         $urlPath = stristr($_SERVER['REQUEST_URI'], '&hash', True);
         $hash = str_replace ($urlPath.'&hash=', '', $_SERVER['REQUEST_URI']);
-    // replace " " by "+"
+        // replace " " by "+"
         $urlPath = str_replace(" ", "+", $urlPath);
         $urlPath = str_replace("%22", '"', $urlPath);
-    // URL needed to create the tokken
+        // URL needed to create the tokken
         $s = $urlPath.$key;
         $tokken = "";
         $tokken = base64_encode(pack('H*', md5($s)));
         $tokken = str_replace(array("+", "/", "="), array(".", "_", "-"), $tokken);
-        //var_dump($tokken);
+        /*var_dump($s);
+         var_dump($tokken);
+        var_dump($hash);*/
         if ($tokken == $hash) {
             return True;
         }
