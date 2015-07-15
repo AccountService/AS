@@ -141,7 +141,7 @@ if($request->query->has('exit')) {
                             <div><?=$value['description']?></div>
                             Count:
                         </div>
-                        <input type="text" style="width:100px; margin-top:-70px; text-align:center" value="1" name="count">
+                        <input type="text" style="width:100px; margin-top:-70px; text-align:center" value="1" name="count" pattern="^[1-9][0-9]*$">
                         <button class="btn waves-effect waves-light floating" type="submit">$<?=(float)$value['price']?>
                         </button>
 

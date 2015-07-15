@@ -152,7 +152,7 @@
 
             if($user->keyExist($DB)) {
                 $user->showBuyedKeys($DB);
-                echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block'>
+                echo "<input type='text' name='Amount' value='100' style='width: 30px; display:inline-block' pattern='^[1-9][0-9]?$|^100$'>
                       <span style='display:inline-block'>%</span><div class='center-button'>
                       <button class='btn waves-effect waves-light floating' type='submit'>Cancel request</button></div>";
             }
