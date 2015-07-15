@@ -91,14 +91,15 @@ if($request->query->has('exit')) {
                 $regInfo = array('name' => $user->getName(), 'email' => $user->getEmail(), 'id' => $user->getID());
                 $regInfo = json_encode($regInfo);
 
-                $url = "dev/addUser.php";
-                $host = 'http//10.55.33.27/';
+                $url = "/user/add";
+                $host = '10.55.33.27';
                 $partner = 'CRM';
                 $password = 'password';
                 $signer = new signurl();
                 $reg_url = $signer->UrlSigner($host,$url,$partner,$password);
 
-                $DB->sendData("regInfo", $regInfo, $reg_url);
+                $answer = $DB->sendData("regInfo", $regInfo, $reg_url);
+
                 echo '<script type="text/javascript">alert("Registration is successful!")</script>';
                 echo "<script>location.href = 'index.php';</script>";
             } else {
