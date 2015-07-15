@@ -101,7 +101,12 @@ if($request->query->has('exit')) {
    <?php
    $id = $request->query->get('id');
    $count = $request->query->get('count');
-   $url = "/product.php?id=$id&count=$count";
+   if($session->has('id')) {
+       $user_id = $session->get('id');
+   } else {
+       $user_id = 0;
+   }
+   $url = "/product.php?id=$id&count=$count&user_id=$user_id";
    //echo $url;
    $host = '10.55.33.36';
    $card = '9999999999999999';
