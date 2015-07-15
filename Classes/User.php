@@ -44,20 +44,25 @@
 
         public function showBuyedKeys($DB) {
             $keys = $DB->getAllBuyedKeys($this->id);
-            $prods_keys =array();
-            $i = 0;
+
             foreach ($keys as $key => $value) {
 
-                 asort($keys['Undefined product']);
 
-                $prname =     $DB->getproductName($DB->getProductIdByKey(array_shift($keys['Undefined product'])));
+                 asort($value);
+
+                $value1 = $value;
+                $prname =     $DB->getproductName($DB->getProductIdByKey(array_shift($value)));
+
+               
                 echo "<h1>$prname</h1>";
 
-                foreach ($keys['Undefined product'] as $key) {
+                foreach ($value1 as $key) {
+
                     if ($prname !== $DB->getproductName($DB->getProductIdByKey($key))) {
                         $prname = $DB->getproductName($DB->getProductIdByKey($key));
                         echo "<h1>$prname</h1>";
                     }
+
                     $id = $DB->getIDbyKey($key);
                          echo "<li class='collection-item'>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
 
