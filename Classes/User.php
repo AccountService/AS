@@ -47,22 +47,23 @@
             $prods_keys =array();
             $i = 0;
             foreach ($keys as $key => $value) {
-                echo "<h5>" . $key . ":" . "</h5>";
-                echo "<ul class='collection'>";
 
+                 asort($keys['Undefined product']);
 
-                foreach ($value as $key) {
-                    $prod_id = $DB->getProductIdByKey($key);
+                $prname =     $DB->getproductName($DB->getProductIdByKey(array_shift($keys['Undefined product'])));
+                echo "<h1>$prname</h1>";
+
+                foreach ($keys['Undefined product'] as $key) {
+                    if ($prname !== $DB->getproductName($DB->getProductIdByKey($key))) {
+                        $prname = $DB->getproductName($DB->getProductIdByKey($key));
+                        echo "<h1>$prname</h1>";
+                    }
                     $id = $DB->getIDbyKey($key);
-                    $prod_name = $DB->getproductName($prod_id);
-                    $prods_keys[$i]['prod'] = $prod_name;
-                    $prods_keys[$i]['key'] = $key;
-                    echo $prod_name;
-                    echo "<li class='collection-item'>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
-                    $i++;
+                         echo "<li class='collection-item'>ID: $id | Key: $key<input type='checkbox' name=\"$key\" value=\"$id\" class='checkbox'></li>";
+
                 }
-                echo "</ul>";
-                echo "<br>";
+
+
 
             }
 
