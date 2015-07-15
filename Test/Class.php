@@ -144,15 +144,14 @@ Class db extends dbConnector {
     }
 
     public function getProductId($prodName) {
-            $file = file_get_contents("products.json");
-            $json = json_decode($file);
+        $file = file_get_contents("products.json");
+        $json = json_decode($file);
 
-            foreach($json->products as $key => $value) {
-                if($value->name == $prodName) {
-                    $prod_id = $value->id;
-                }
+        foreach($json->products as $key => $value) {
+            if($value->name == $prodName) {
+                $prod_id = $value->id;
             }
-
+        }
 
         if (isset($prod_id)) {
             return $prod_id;
@@ -160,10 +159,6 @@ Class db extends dbConnector {
         else {
             return "Undefined product";
         }
-    }
-    public function getProductIdByKey($key) {
-
-        return strstr($key,'_',true);
     }
 
     function sendData($key_info ,$info, $address){
