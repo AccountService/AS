@@ -53,7 +53,7 @@
                 $value1 = $value;
                 $prname =     $DB->getproductName($DB->getProductIdByKey(array_shift($value)));
 
-               
+
                 echo "<h1>$prname</h1>";
 
                 foreach ($value1 as $key) {

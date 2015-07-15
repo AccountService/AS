@@ -100,7 +100,7 @@
     $info = json_encode($cancel_info);
 
     $url = "/refund/add";
-    $host = 'http://10.55.33.27';
+    $host = '10.55.33.27';
     $partner = 'CRM';
     $password = 'password';
     $signer = new signurl();
