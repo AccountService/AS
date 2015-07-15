@@ -1,5 +1,5 @@
 <?php
-$loader ='/../../vendor/autoload.php';
+$loader ='vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Request;
 
 $signer = new signurl();
